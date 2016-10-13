@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from '@angular/material';
 
 
-// import { PeopleAppComponent } from './app.component';
+import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
@@ -13,11 +13,11 @@ import { MaterialModule } from '@angular/material';
     MaterialModule.forRoot()
   ],
   declarations: [
-    // PeopleAppComponent
+    PeopleAppComponent
   ],
   providers: [ ],
   bootstrap: [
-    // PeopleAppComponent
+    PeopleAppComponent
   ]
 })
 export class AppModule { }
