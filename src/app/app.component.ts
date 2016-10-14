@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css']
 })
-export class PeopleAppComponent {
-    name = 'Angular 2';
-}
+export class PeopleAppComponent {}
