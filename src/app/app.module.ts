@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
+// import { RoutesModule } from './routes.config';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,7 +15,8 @@ import { PersonComponent } from './person/person.component';
   imports: [
     BrowserModule,
     HttpModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    // RoutesModule
   ],
   declarations: [
     PeopleAppComponent,
