@@ -3,7 +3,7 @@
 </section>
 
 <section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
-  <sfeir-form (onPersonAdd)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
+  <sfeir-form (onSubmit)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
 </section>
 
 <button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" md-fab color="accent">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'sfeir-form',
@@ -7,25 +7,33 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  @Output('onCancel') cancel$;
-  @Output('onPersonAdd') add$;
+  private isUpdateMode: boolean = false;
 
-  person = {};
+  @Input() model: any = {};
+  @Output('onCancel') cancel$;
+  @Output('onSubmit') submit$;
 
   constructor() {
-    this.add$ = new EventEmitter();
+    this.submit$ = new EventEmitter();
     this.cancel$ = new EventEmitter();
   }
 
   ngOnInit() {
   }
 
+  ngOnChanges(record) {
+    if(record.model && record.model.currentValue) {
+      this.model = record.model.currentValue;
+      this.isUpdateMode = !!this.model;
+    }
+  }
+
   cancel() {
     this.cancel$.emit();
   }
 
-  add(person) {
-    this.add$.emit(person);
+  submit(person) {
+    this.submit$.emit(this.model);
   }
 
 }

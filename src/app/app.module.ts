@@ -15,6 +15,7 @@ import { PersonComponent } from './person/person.component';
 import { PeopleComponent } from './people/people.component';
 import { CardComponent } from './shared/card/card.component';
 import { FormComponent } from './shared/form/form.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { FormComponent } from './shared/form/form.component';
     PersonComponent,
     PeopleComponent,
     CardComponent,
-    FormComponent
+    FormComponent,
+    UpdateComponent
   ],
   providers: [ ],
   bootstrap: [
