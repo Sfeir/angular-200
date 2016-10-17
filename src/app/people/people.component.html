@@ -2,8 +2,8 @@
   <sfeir-card [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
 </section>
 
-<section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }" (click)="hideDialog()">
-  your form goes here...<br/>(click to close)
+<section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
+  <sfeir-form (onPersonAdd)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
 </section>
 
 <button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" md-fab color="accent">

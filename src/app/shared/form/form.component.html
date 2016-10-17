@@ -1,0 +1,53 @@
+<md-card class="md-whiteframe-2dp">
+
+  <md-card-title>
+    <span>Create new person</span>
+  </md-card-title>
+
+  <md-card-content>
+    <form #f="ngForm">
+
+      <table style="width: 100%" cellspacing="0">
+        <tr>
+          <td>
+            <md-input placeholder="First name" ngModel name="firstname"></md-input>
+            <md-input placeholder="Last Name" ngModel name="lastname"></md-input>
+          </td>
+          <td class="align-right">
+            <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg"/>
+            <input type="hidden" ngModel name="photo">
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <md-input placeholder="Email" style="width:100%" ngModel name="email" #email type="email"></md-input>
+      </p>
+
+      <p>
+        <md-input placeholder="Address" style="width:100%" ngModel name="street"></md-input>
+      </p>
+
+      <p ngModelGroup="address">
+        <md-input placeholder="City" ngModel name="city"></md-input>
+        <md-input placeholder="Postal Code" ngModel name="postalCode"></md-input>
+      </p>
+
+      <p>
+        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" ngModel name="phone"></md-input>
+      </p>
+
+      <p>
+        <md-checkbox>Manager</md-checkbox>
+      </p>
+
+    </form>
+  </md-card-content>
+
+
+  <md-card-actions align="end">
+    <button md-button type="button" (click)="cancel()">Cancel</button>
+    <button md-button color="primary" type="submit" (click)="add(f.value)">Save</button>
+  </md-card-actions>
+
+</md-card>
