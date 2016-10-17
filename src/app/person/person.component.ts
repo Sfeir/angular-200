@@ -16,4 +16,8 @@ export class PersonComponent implements OnInit {
     this.person = PEOPLE[0];
   }
 
+  random() {
+    this.person = PEOPLE[ (Math.random() * PEOPLE.length) | 0 ];
+  }
+
 }
