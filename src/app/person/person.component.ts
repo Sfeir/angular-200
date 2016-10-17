@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PEOPLE } from '../_static/people';
+import { Http } from '@angular/http';
+
+const BASE_URL = 'http://localhost:9000';
 
 @Component({
   selector: 'sfeir-person',
@@ -10,14 +12,18 @@ export class PersonComponent implements OnInit {
 
   private person: any = {};
 
-  constructor() { }
+  constructor(private _http: Http) { }
 
   ngOnInit() {
-    this.person = PEOPLE[0];
+    this._http.get(`${BASE_URL}/api/peoples/`)
+      .map( res => res.json() )
+      .subscribe( person => this.person = person[0]);
   }
 
   random() {
-    this.person = PEOPLE[ (Math.random() * PEOPLE.length) | 0 ];
+    this._http.get(`${BASE_URL}/api/peoples/random`)
+      .map( res => res.json() )
+      .subscribe( person => this.person = person);
   }
 
 }

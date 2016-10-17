@@ -1,6 +1,7 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
@@ -12,6 +13,7 @@ import { PersonComponent } from './person/person.component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpModule,
     MaterialModule.forRoot()
   ],
   declarations: [
