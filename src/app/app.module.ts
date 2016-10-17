@@ -11,6 +11,7 @@ import { RoutesModule } from './routes.config';
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PersonComponent } from './person/person.component';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { PersonComponent } from './person/person.component';
   declarations: [
     PeopleAppComponent,
     HomeComponent,
-    PersonComponent
+    PersonComponent,
+    PeopleComponent
   ],
   providers: [ ],
   bootstrap: [
