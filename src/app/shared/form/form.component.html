@@ -1,12 +1,12 @@
 <md-card class="md-whiteframe-2dp">
 
   <md-card-title>
-    <span *ngIf="isUpdateMode" >Update {{ model?.firstname }} {{ model?.lastname }}</span>
+    <span *ngIf="isUpdateMode" >Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span>
     <span *ngIf="!isUpdateMode">Create new person</span>
   </md-card-title>
 
   <md-card-content>
-    <form #f="ngForm">
+    <form novalidate #f="ngForm">
 
       <p *ngIf="isUpdateMode">
         <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [ngModel]="model.id"></md-input>
@@ -15,8 +15,24 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <md-input placeholder="First name" [(ngModel)]="model.firstname" name="firstname"></md-input>
-            <md-input placeholder="Last Name" [(ngModel)]="model.lastname" name="lastname"></md-input>
+            <p [class.errors]="firstname.dirty && firstname.invalid">
+
+              <md-input placeholder="First name" [(ngModel)]="model.firstname" minlength="2" required name="firstname" #firstname="ngModel" ></md-input>
+
+              <span *ngIf="firstname.dirty && firstname.errors?.required"><br>First name is required</span>
+              <span *ngIf="firstname.dirty && firstname.errors?.minlength"><br>First name is 2 chars min</span>
+
+            </p>
+
+            <p [class.errors]="lastname.dirty && lastname.invalid">
+
+              <md-input placeholder="Last Name" [(ngModel)]="model.lastname" minlength="2" required name="lastname" #lastname="ngModel"></md-input>
+
+              <span *ngIf="lastname.dirty && lastname.errors?.required"><br>Last name is required</span>
+              <span *ngIf="lastname.dirty && lastname.errors?.minlength"><br>Last name is 2 chars min</span>
+
+            </p>
+
           </td>
           <td class="align-right">
             <img width="100" src="{{ model.photo }}"/>
@@ -25,8 +41,10 @@
         </tr>
       </table>
 
-      <p>
-        <md-input placeholder="Email" style="width:100%" [(ngModel)]="model.email" name="email" #email type="email"></md-input>
+      <p [class.errors]="email.dirty && email.invalid">
+        <md-input placeholder="Email" style="width:100%" [(ngModel)]="model.email" required name="email" type="email" #email="ngModel"></md-input>
+
+        <span *ngIf="email.dirty && email.errors?.required">Email is mandatory</span>
       </p>
 
       <p>
@@ -38,8 +56,11 @@
         <md-input placeholder="Postal Code" [(ngModel)]="model.postalCode" name="postalCode"></md-input>
       </p>
 
-      <p>
-        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" [(ngModel)]="model.phone" name="phone"></md-input>
+      <p [class.errors]="phone.dirty && phone.invalid">
+        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" [(ngModel)]="model.phone" name="phone" pattern="\d{10}" required #phone="ngModel"></md-input>
+
+        <span *ngIf="phone.dirty && phone.errors?.pattern">Phone number must be 10 digits</span>
+        <span *ngIf="phone.dirty && phone.errors?.required">Phone number is mandatory</span>
       </p>
 
       <p>
@@ -52,7 +73,7 @@
 
   <md-card-actions align="end">
     <button md-button type="button" (click)="cancel()">Cancel</button>
-    <button md-button color="primary" type="submit" (click)="submit(f.value)">Save</button>
+    <button md-button color="primary" type="submit" (click)="submit(f.value)" [disabled]="!f.valid">Save</button>
   </md-card-actions>
 
 </md-card>
