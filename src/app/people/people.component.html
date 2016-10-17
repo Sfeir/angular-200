@@ -1,3 +1,3 @@
 <section *ngFor="let person of people" >
-  <sfeir-card [person]="person"></sfeir-card>
+  <sfeir-card [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
 </section>
