@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { CustomValidators } from './custom-validators';
+
 @Component({
   selector: 'sfeir-form',
   templateUrl: 'form.component.html',
@@ -10,7 +12,7 @@ export class FormComponent implements OnInit {
 
   private isUpdateMode: boolean = false;
 
-  @Input() model:any = {};
+  @Input() model: any = {};
   @Output('onCancel') cancel$;
   @Output('onSubmit') submit$;
 
@@ -50,7 +52,9 @@ export class FormComponent implements OnInit {
       lastname: new FormControl('', Validators.compose([
         Validators.required, Validators.minLength(2)
       ])),
-      email: new FormControl('', Validators.required),
+      email: new FormControl('', Validators.compose([
+        Validators.required, CustomValidators.sfeirEmail
+      ])),
       photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
       street: new FormControl(''),
       city: new FormControl(''),
