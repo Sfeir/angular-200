@@ -1,8 +1,14 @@
 'use strict';
 
 var _ = require('underscore');
-var PEOPLES = require('./data/persons').peoples;
-
+var PEOPLES = require('./data/persons').peoples.map(
+  person => {
+    // work with timestamps, it's cleaner
+    person.entryDate = parseDate(person.entryDate);
+    person.birthDate = parseDate(person.birthDate);
+    return person;
+  }
+)
 
 exports.listAll = function (req, res) {
   console.log('List all PEOPLES');
@@ -123,4 +129,9 @@ function getId(req) {
 
 function createId() {
   return new Date().getTime()+"";
+}
+
+function parseDate(stringDate) {
+  let dates = stringDate.split('/');
+  return +new Date(dates[1]+' '+dates[0]+' '+dates[2]);
 }
