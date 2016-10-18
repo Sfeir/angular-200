@@ -17,6 +17,7 @@ import { CardComponent } from './shared/card/card.component';
 import { FormComponent } from './shared/form/form.component';
 import { PeopleService } from './shared/people-service/people.service';
 import { UpdateComponent } from './update/update.component';
+import { NaPipe } from './shared/na-pipe/na.pipe';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { UpdateComponent } from './update/update.component';
     PeopleComponent,
     CardComponent,
     FormComponent,
-    UpdateComponent
+    UpdateComponent,
+    NaPipe
   ],
   providers: [
     PeopleService
