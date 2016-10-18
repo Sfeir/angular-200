@@ -1,13 +1,13 @@
-<section>
+<section [ngSwitch]="view">
 
-  <div>
+  <div *ngSwitchCase="'card'">
     <sfeir-card *ngFor="let person of people" [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
   </div>
 
 
-  <div>
+  <div *ngSwitchCase="'list'">
     <md-list>
-      <md-list-item *ngFor="let person of people" class="md-whiteframe-2dp md-card">
+      <md-list-item (click)="navigate(person)" *ngFor="let person of people" class="md-whiteframe-2dp md-card">
         <img md-list-avatar src="{{ person.photo }}">
         <h3 md-line> {{person.firstname}} {{person.lastname}} </h3>
         <p md-line>
@@ -21,7 +21,7 @@
 </section>
 
 <section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
-  <sfeir-form (onSubmit)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
+  <sfeir-form (onPersonAdd)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
 </section>
 
 <section class="buttons-fab" *ngIf="dialogStatus == 'inactive'">
@@ -29,8 +29,8 @@
     <i class="material-icons">add</i>
   </button>
 
-  <button md-fab color="warn">
-    <i class="material-icons">list</i>
-    <!-- <i class="material-icons">view_stream</i> -->
+  <button (click)="switchView()" md-fab color="warn">
+    <i class="material-icons" *ngIf="view === 'card'" >list</i>
+    <i class="material-icons" *ngIf="view === 'list'" >view_stream</i>
   </button>
 </section>

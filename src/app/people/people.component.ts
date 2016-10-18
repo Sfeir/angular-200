@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PeopleService } from '../shared/people-service/people.service';
 import 'rxjs/add/operator/mergeMap';
 
@@ -13,8 +14,10 @@ export class PeopleComponent implements OnInit {
 
   dialogStatus = 'inactive';
   people = [];
+  view = 'card';
 
   constructor(
+    private _router: Router,
     private _service: PeopleService
   ) { }
 
@@ -47,6 +50,14 @@ export class PeopleComponent implements OnInit {
 
   hideDialog() {
     this.dialogStatus = 'inactive';
+  }
+
+  switchView() {
+    this.view = (this.view === 'card') ? 'list' : 'card';
+  }
+
+  navigate(person) {
+    this._router.navigate(['/person', person.id]);
   }
 
 }
