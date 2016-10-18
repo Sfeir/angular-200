@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
@@ -22,7 +22,7 @@ import { UpdateComponent } from './update/update.component';
     BrowserModule,
     HttpModule,
     RouterModule,
-    FormsModule,
+    ReactiveFormsModule,
     MaterialModule.forRoot(),
     RoutesModule
   ],

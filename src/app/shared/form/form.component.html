@@ -1,70 +1,70 @@
 <md-card class="md-whiteframe-2dp">
 
   <md-card-title>
-    <span *ngIf="isUpdateMode" >Update {{ model?.firstname || '?' }} {{ model?.lastname || '?' }}</span>
+    <span *ngIf="isUpdateMode" >Update {{ form.controls.firstname.value }} {{ form.controls.lastname.value }}</span>
     <span *ngIf="!isUpdateMode">Create new person</span>
   </md-card-title>
 
   <md-card-content>
-    <form novalidate #f="ngForm">
+    <form novalidate [formGroup]="form">
 
       <p *ngIf="isUpdateMode">
-        <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [ngModel]="model.id"></md-input>
+        <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" formControlName="id"></md-input>
       </p>
 
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <p [class.errors]="firstname.dirty && firstname.invalid">
+            <p [class.errors]="form.controls.firstname.dirty && form.controls.firstname.invalid">
 
-              <md-input placeholder="First name" [(ngModel)]="model.firstname" minlength="2" required name="firstname" #firstname="ngModel" ></md-input>
+              <md-input placeholder="First name" formControlName="firstname" minlength="2" required name="firstname" ></md-input>
 
-              <span *ngIf="firstname.dirty && firstname.errors?.required"><br>First name is required</span>
-              <span *ngIf="firstname.dirty && firstname.errors?.minlength"><br>First name is 2 chars min</span>
+              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.required"><br>First name is required</span>
+              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.minlength"><br>First name is 2 chars min</span>
 
             </p>
 
-            <p [class.errors]="lastname.dirty && lastname.invalid">
+            <p [class.errors]="form.controls.lastname.dirty && form.controls.lastname.invalid">
 
-              <md-input placeholder="Last Name" [(ngModel)]="model.lastname" minlength="2" required name="lastname" #lastname="ngModel"></md-input>
+              <md-input placeholder="Last Name" formControlName="lastname" required name="lastname"></md-input>
 
-              <span *ngIf="lastname.dirty && lastname.errors?.required"><br>Last name is required</span>
-              <span *ngIf="lastname.dirty && lastname.errors?.minlength"><br>Last name is 2 chars min</span>
+              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.required"><br>Last name is required</span>
+              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.minlength"><br>Last name is 2 chars min</span>
 
             </p>
 
           </td>
           <td class="align-right">
-            <img width="100" src="{{ model.photo }}"/>
-            <input type="hidden" [(ngModel)]="model.photo" name="photo">
+            <img width="100" src="{{ form.controls.photo.value }}"/>
+            <input type="hidden" formControlName="photo" name="photo">
           </td>
         </tr>
       </table>
 
-      <p [class.errors]="email.dirty && email.invalid">
-        <md-input placeholder="Email" style="width:100%" [(ngModel)]="model.email" required name="email" type="email" #email="ngModel"></md-input>
+      <p [class.errors]="form.controls.email.dirty && form.controls.email.invalid">
+        <md-input placeholder="Email" style="width:100%" formControlName="email" name="email" type="email"></md-input>
 
-        <span *ngIf="email.dirty && email.errors?.required">Email is mandatory</span>
+        <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.required">Email is mandatory</span>
       </p>
 
       <p>
-        <md-input placeholder="Address" style="width:100%" [(ngModel)]="model.street" name="street"></md-input>
+        <md-input placeholder="Address" style="width:100%" formControlName="street" name="street"></md-input>
       </p>
 
       <p>
-        <md-input placeholder="City" [(ngModel)]="model.city" name="city"></md-input>
-        <md-input placeholder="Postal Code" [(ngModel)]="model.postalCode" name="postalCode"></md-input>
+        <md-input placeholder="City" formControlName="city" name="city"></md-input>
+        <md-input placeholder="Postal Code" formControlName="postalCode" name="postalCode"></md-input>
       </p>
 
-      <p [class.errors]="phone.dirty && phone.invalid">
-        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" [(ngModel)]="model.phone" name="phone" pattern="\d{10}" required #phone="ngModel"></md-input>
+      <p [class.errors]="form.controls.phone.dirty && form.controls.phone.invalid">
+        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" formControlName="phone" name="phone"></md-input>
 
-        <span *ngIf="phone.dirty && phone.errors?.pattern">Phone number must be 10 digits</span>
-        <span *ngIf="phone.dirty && phone.errors?.required">Phone number is mandatory</span>
+        <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.required">Phone number is mandatory</span>
+        <span *ngIf="form.controls.phone.dirty && !form.controls.phone.errors?.required && form.controls.phone.errors?.pattern">Phone number must be 10 digits</span>
       </p>
 
       <p>
-        <md-checkbox name="isManager" [(ngModel)]="model.isManager">Manager</md-checkbox>
+        <md-checkbox name="isManager" formControlName="isManager">Manager</md-checkbox>
       </p>
 
     </form>
@@ -73,7 +73,7 @@
 
   <md-card-actions align="end">
     <button md-button type="button" (click)="cancel()">Cancel</button>
-    <button md-button color="primary" type="submit" (click)="submit(f.value)" [disabled]="!f.valid">Save</button>
+    <button md-button color="primary" type="submit" (click)="submit(form.value)" [disabled]="!form.valid">Save</button>
   </md-card-actions>
 
 </md-card>
