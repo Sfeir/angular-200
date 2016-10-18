@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { PeopleService } from '../shared/people-service/people.service';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -12,18 +12,15 @@ export class PersonComponent implements OnInit {
 
   private person: any = {};
 
-  constructor(private _http: Http) { }
+  constructor( private _service: PeopleService) { }
 
   ngOnInit() {
-    this._http.get(`${BASE_URL}/api/peoples/`)
-      .map( res => res.json() )
-      .subscribe( person => this.person = person[0]);
+    this.random();
   }
 
   random() {
-    this._http.get(`${BASE_URL}/api/peoples/random`)
-      .map( res => res.json() )
-      .subscribe( person => this.person = person);
+    this._service.fetchRandom()
+      .subscribe((person) => this.person = person);
   }
 
 }

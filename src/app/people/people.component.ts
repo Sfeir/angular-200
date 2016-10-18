@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Headers } from '@angular/http';
+import { PeopleService } from '../shared/people-service/people.service';
 import 'rxjs/add/operator/mergeMap';
 
 const BASE_URL = 'http://localhost:9000';
@@ -15,32 +15,30 @@ export class PeopleComponent implements OnInit {
   people = [];
 
   constructor(
-    private _http: Http
+    private _service: PeopleService
   ) { }
 
   ngOnInit() {
-    this._http.get(`${BASE_URL}/api/peoples/`)
-      .map( res => res.json() )
-      .subscribe( people => this.people = people);
+    this._service.fetch().subscribe((people) => {
+      this.people = people;
+    });
   }
 
   delete(person) {
-    this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
-      .map( res => res.json() )
-      .subscribe( people => this.people = people);
+    this._service.delete(person.id)
+      .subscribe((people) => {
+          this.people = people;
+        }
+      );
   }
 
   add(person) {
-    let requestOptions = { headers: new Headers({'Content-Type': 'application/json'})};
-    this._http.post(`${BASE_URL}/api/peoples`, JSON.stringify(person), requestOptions)
-      .flatMap( () => {
-        return this._http.get(`${BASE_URL}/api/peoples/`)
-          .map( res => res.json() );
-      })
+    this._service.create(person)
+      .flatMap( _ => this._service.fetch() )
       .subscribe( people => {
         this.people = people;
         this.hideDialog();
-      });
+      })
   }
 
   showDialog() {
