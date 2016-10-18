@@ -26,7 +26,7 @@
        Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
      </div>
      <div class="contact-info">
-       Birth Date&nbsp;:&nbsp;<span>{{ person.birthDate }}</span>
+       Birth Date&nbsp;:&nbsp;<span>{{ person.birthDate | date:'dd/MM/yyyy' }}</span>
      </div>
      <div class="buttons-info">
        <a md-button title="Locate" href="#/locator/1">
