@@ -1,11 +1,36 @@
-<section *ngFor="let person of people" >
-  <sfeir-card [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
+<section>
+
+  <div>
+    <sfeir-card *ngFor="let person of people" [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
+  </div>
+
+
+  <div>
+    <md-list>
+      <md-list-item *ngFor="let person of people" class="md-whiteframe-2dp md-card">
+        <img md-list-avatar src="{{ person.photo }}">
+        <h3 md-line> {{person.firstname}} {{person.lastname}} </h3>
+        <p md-line>
+          <span> {{person.entity}} </span>
+          — <span>{{person.email}} </span>
+        </p>
+      </md-list-item>
+    </md-list>
+  </div>
+
 </section>
 
 <section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
   <sfeir-form (onSubmit)="add($event)" (onCancel)="hideDialog()"></sfeir-form>
 </section>
 
-<button (click)="showDialog()" *ngIf="dialogStatus == 'inactive'" md-fab color="accent">
-  <i class="material-icons">add</i>
-</button>
+<section class="buttons-fab" *ngIf="dialogStatus == 'inactive'">
+  <button (click)="showDialog()" md-fab color="accent" class="button-add">
+    <i class="material-icons">add</i>
+  </button>
+
+  <button md-fab color="warn">
+    <i class="material-icons">list</i>
+    <!-- <i class="material-icons">view_stream</i> -->
+  </button>
+</section>
