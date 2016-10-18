@@ -18,6 +18,7 @@ import { FormComponent } from './shared/form/form.component';
 import { PeopleService } from './shared/people-service/people.service';
 import { UpdateComponent } from './update/update.component';
 import { NaPipe } from './shared/na-pipe/na.pipe';
+import { SfeirBadgeDirective } from './shared/badge/sfeir-badge.directive';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { NaPipe } from './shared/na-pipe/na.pipe';
     CardComponent,
     FormComponent,
     UpdateComponent,
-    NaPipe
+    NaPipe,
+    SfeirBadgeDirective
   ],
   providers: [
     PeopleService
