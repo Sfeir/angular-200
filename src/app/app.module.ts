@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
-import { RoutesModule } from './routes.config';
+import { AppRoutes } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +27,7 @@ import { SfeirBadgeDirective } from './shared/badge/sfeir-badge.directive';
     RouterModule,
     ReactiveFormsModule,
     MaterialModule.forRoot(),
-    RoutesModule
+    AppRoutes
   ],
   declarations: [
     PeopleAppComponent,

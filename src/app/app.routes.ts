@@ -13,4 +13,4 @@ const ROUTES: Routes = [
   {path: 'edit/:id', component: UpdateComponent}
 ];
 
-export const RoutesModule = RouterModule.forRoot(ROUTES,{useHash: true});
+export const AppRoutes = RouterModule.forRoot(ROUTES,{useHash: true});
