@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class CardComponent implements OnInit {
 
   @Input() person = {};
-  @Output('onPersonDelete') delete$;
+  @Output('personDelete') delete$;
 
   constructor() {
     this.delete$ = new EventEmitter();
