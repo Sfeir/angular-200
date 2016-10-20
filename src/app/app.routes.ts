@@ -11,4 +11,4 @@ const ROUTES: Routes = [
   {path: 'people', component: PeopleComponent}
 ];
 
-export const RoutesModule = RouterModule.forRoot(ROUTES,{useHash: true});
+export const AppRoutes = RouterModule.forRoot(ROUTES,{useHash: true});
