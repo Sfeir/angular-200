@@ -1,5 +1,5 @@
 <section *ngFor="let person of people" >
-  <sfeir-card [person]="person" (onPersonDelete)="delete($event)"></sfeir-card>
+  <sfeir-card [person]="person" (personDelete)="delete($event)"></sfeir-card>
 </section>
 
 <section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }" (click)="hideDialog()">
