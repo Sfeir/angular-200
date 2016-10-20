@@ -7,8 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  @Output('onCancel') cancel$;
-  @Output('onPersonAdd') add$;
+  @Output('cancel') cancel$;
+  @Output('personAdd') add$;
 
   person = {};
 
