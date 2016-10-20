@@ -12,9 +12,10 @@ export class FormComponent implements OnInit {
 
   private isUpdateMode: boolean = false;
 
-  @Input() model: any = {};
-  @Output('onCancel') cancel$;
-  @Output('onSubmit') submit$;
+  @Input() model:any = {};
+  @Output('cancel') cancel$;
+  @Output('submit') submit$;
+
 
   form: FormGroup;
 
