@@ -7,7 +7,8 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  private isUpdateMode: boolean = false;
+  @Output('cancel') cancel$;
+  @Output('personAdd') add$;
 
   @Input() model: any = {};
   @Output('onCancel') cancel$;
