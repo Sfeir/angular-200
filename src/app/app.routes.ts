@@ -8,4 +8,4 @@ const ROUTES: Routes = [
   // TODO
 ];
 
-export const RoutesModule = RouterModule.forRoot(ROUTES);
+export const AppRoutes = RouterModule.forRoot(ROUTES);
