@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
-import { RoutesModule } from './routes.config';
+import { AppRoutes } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -24,7 +24,7 @@ import { UpdateComponent } from './update/update.component';
     RouterModule,
     FormsModule,
     MaterialModule.forRoot(),
-    RoutesModule
+    AppRoutes
   ],
   declarations: [
     PeopleAppComponent,
