@@ -18,30 +18,32 @@ export class UpdateComponent implements OnInit {
     firstname: '',
     lastname: '',
     email: '',
-    street: '',
-    city: '',
-    postalCode: '',
+    address: {
+      street: '',
+      city: '',
+      postalCode: ''
+    },
     phone: '',
     isManager: false
   };
 
   constructor(
-    private _route: ActivatedRoute,
-    private _router: Router,
-    private _service: PeopleService
+      private _route: ActivatedRoute,
+      private _router: Router,
+      private _service: PeopleService
   ) { }
 
 
   ngOnInit() {
     this._route.params
-      .map((params: any) => params.id)
-      .flatMap(id => this._service.fetchOne(id))
-      .subscribe( person => this.person = person);
+        .map((params: any) => params.id)
+        .flatMap(id => this._service.fetchOne(id))
+        .subscribe( person => this.person = person);
   }
 
   submit(person) {
     this._service.update(person).subscribe(
-      res => this._router.navigate(['/people'])
+        res => this._router.navigate(['/people'])
     );
   }
 
