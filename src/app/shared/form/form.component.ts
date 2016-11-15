@@ -9,7 +9,7 @@ export class FormComponent implements OnInit {
 
   private isUpdateMode: boolean = false;
 
-  @Input() model:any = {};
+  @Input() model:any;
   @Output('cancel') cancel$;
   @Output('submit') submit$;
 
@@ -17,6 +17,7 @@ export class FormComponent implements OnInit {
   constructor() {
     this.submit$ = new EventEmitter();
     this.cancel$ = new EventEmitter();
+    this.model = {address:{}};
   }
 
   ngOnInit() {
