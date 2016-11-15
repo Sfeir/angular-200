@@ -45,7 +45,7 @@ export class FormComponent implements OnInit, OnChanges {
 
   private _buildForm() {
     return new FormGroup({
-      id: new FormControl(''),
+      id: new FormControl({value: '', disabled:true}),
       firstname: new FormControl('', Validators.compose([
         Validators.required, Validators.minLength(2)
       ])),
