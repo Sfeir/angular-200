@@ -48,11 +48,11 @@
         <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.sfeirEmail"><br>Invalid email (ex: chegham.w@sfeir.com)</span>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="Address" style="width:100%" formControlName="street" name="street"></md-input>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="City" formControlName="city" name="city"></md-input>
         <md-input placeholder="Postal Code" formControlName="postalCode" name="postalCode"></md-input>
       </p>
