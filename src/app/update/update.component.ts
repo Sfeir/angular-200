@@ -27,8 +27,6 @@ export class UpdateComponent implements OnInit {
     isManager: false
   };
 
-  private _personId: number;
-
   constructor(
       private _route: ActivatedRoute,
       private _router: Router,
@@ -37,8 +35,8 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit() {
     this._route.params
-        .map((params: any) => this._personId = params.id)
-        .flatMap(_ => this.fetchOne(this._personId))
+        .map((params: any) => params.id)
+        .flatMap(id => this.fetchOne(id))
         .subscribe( person => this.person = person);
   }
 
@@ -48,7 +46,7 @@ export class UpdateComponent implements OnInit {
   }
 
   submit(person) {
-    return this._http.put(`${BASE_URL}/api/peoples/${this._personId}`, person)
+    return this._http.put(`${BASE_URL}/api/peoples/${person.id}`, person)
         .map( res => res.json() )
         .subscribe( () => this._router.navigate(['/people']) );
   }
