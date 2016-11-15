@@ -6,7 +6,7 @@
           <span>{{ person.firstname }} {{ person.lastname }}</span>
         </a>
       </md-card-title>
-      <md-card-subtitle>{{ person.entity }}</md-card-subtitle>
+      <md-card-subtitle>{{ person.entity | na }}</md-card-subtitle>
       <md-card-subtitle class="contact-info">
         <md-icon svgSrc="assets/images/icon-mail.svg"></md-icon>
         <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;" title="Send an email to {{ person.firstname }} {{ person.lastname }}" class="truncate">{{ person.email }}</a>
