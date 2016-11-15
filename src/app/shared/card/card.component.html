@@ -2,7 +2,7 @@
    <md-card-title-group>
       <img md-card-md-image src="{{ person.photo }}">
       <md-card-title>
-        <a href="#/people/{{person.id}}">
+        <a [routerLink]="['/person', person.id]">
           <span>{{ person.firstname }} {{ person.lastname }}</span>
         </a>
       </md-card-title>
