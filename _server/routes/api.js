@@ -133,5 +133,5 @@ function createId() {
 
 function parseDate(stringDate) {
   let dates = stringDate.split('/');
-  return +new Date(dates[1]+' '+dates[0]+' '+dates[2]);
+  return (new Date(dates[2] + '/' + dates[1] + '/' + dates[0]).getTime());
 }
