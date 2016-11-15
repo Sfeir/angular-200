@@ -1,18 +1,16 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
-import { CustomValidators } from './custom-validators';
 
 @Component({
   selector: 'sfeir-form',
   templateUrl: 'form.component.html',
   styleUrls: ['form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnChanges {
 
   private isUpdateMode: boolean = false;
 
-  @Input() model:any = {};
+  @Input() model;
   @Output('cancel') cancel$;
   @Output('submit') submit$;
 
@@ -23,6 +21,7 @@ export class FormComponent implements OnInit {
     this.submit$ = new EventEmitter();
     this.cancel$ = new EventEmitter();
     this.form = this._buildForm();
+    this.model = {address:{}};
   }
 
   ngOnInit() {
@@ -53,13 +52,13 @@ export class FormComponent implements OnInit {
       lastname: new FormControl('', Validators.compose([
         Validators.required, Validators.minLength(2)
       ])),
-      email: new FormControl('', Validators.compose([
-        Validators.required, CustomValidators.sfeirEmail
-      ])),
+      email: new FormControl('', Validators.required),
       photo: new FormControl('https://randomuser.me/api/portraits/lego/6.jpg'),
-      street: new FormControl(''),
-      city: new FormControl(''),
-      postalCode: new FormControl(''),
+      address: new FormGroup({
+        street: new FormControl(''),
+        city: new FormControl(''),
+        postalCode: new FormControl('')
+      }),
       phone: new FormControl('', Validators.compose([
         Validators.required, Validators.pattern('\\d{10}')
       ])),
