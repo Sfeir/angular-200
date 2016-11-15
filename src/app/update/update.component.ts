@@ -18,9 +18,11 @@ export class UpdateComponent implements OnInit {
     firstname: '',
     lastname: '',
     email: '',
-    street: '',
-    city: '',
-    postalCode: '',
+    address: {
+      street: '',
+      city: '',
+      postalCode: ''
+    },
     phone: '',
     isManager: false
   };
