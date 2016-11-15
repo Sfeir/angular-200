@@ -47,11 +47,11 @@
         <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.required">Email is mandatory</span>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="Address" style="width:100%" formControlName="street" name="street"></md-input>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="City" formControlName="city" name="city"></md-input>
         <md-input placeholder="Postal Code" formControlName="postalCode" name="postalCode"></md-input>
       </p>
