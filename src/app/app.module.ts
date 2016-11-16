@@ -6,7 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 
 import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home/index';
 
 @NgModule({
   imports: [
