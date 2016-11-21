@@ -7,8 +7,8 @@ import { MaterialModule } from '@angular/material';
 
 
 import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { PersonComponent } from './person/person.component';
+import { HomeComponent } from './home/index';
+import { PersonComponent } from './person/index';
 
 @NgModule({
   imports: [
