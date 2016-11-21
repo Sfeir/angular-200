@@ -7,4 +7,4 @@ const ROUTES: Routes = [
   // TODO
 ];
 
-export const AppRoutes = RouterModule.forRoot(ROUTES);
+export const APP_ROUTES = RouterModule.forRoot(ROUTES);
