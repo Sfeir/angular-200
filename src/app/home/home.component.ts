@@ -1,18 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'sfeir-home',
-  templateUrl: 'home.component.html',
-  styleUrls: ['home.component.css']
+    selector: 'sfeir-home',
+    templateUrl: 'home.component.html',
+    styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
+    // private property to store name value
+    private _name:string;
 
-  name = 'Angular 2';
+    /**
+     * Component constructor
+     */
+    constructor() {
+        this._name = 'Angular 2';
+    }
 
-  constructor() {
-  }
+    /**
+     * Returns private property _name
+     *
+     * @returns {string}
+     */
+    get name(): string {
+        return this._name;
+    }
 
-  ngOnInit() {
-  }
-
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+    }
 }
