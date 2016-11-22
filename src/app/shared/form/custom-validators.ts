@@ -2,13 +2,20 @@ import { FormControl } from '@angular/forms';
 
 export class CustomValidators {
 
-  static sfeirEmail(control: FormControl) {
+    /**
+     * Function to control email with custom validator
+     *
+     * @param control
+     *
+     * @returns {{sfeirEmail: boolean}}
+     */
+    static sfeirEmail(control: FormControl) {
+        // email regex
+        const regex = /^\w+\.\w@sfeir\.com$/;
 
-    let regex = /^\w+\.\w@sfeir\.com$/;
-
-    return regex.test(control.value) ? null : {
-      sfeirEmail: true
+        // returns control
+        return regex.test(control.value) ? null : {
+            sfeirEmail: true
+        }
     }
-  }
-
 }
