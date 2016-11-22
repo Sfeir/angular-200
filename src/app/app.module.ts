@@ -7,14 +7,13 @@ import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import { MaterialModule } from '@angular/material';
 
-import { AppRoutes } from './app.routes';
+import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { PersonComponent } from './person/person.component';
-import { PeopleComponent } from './people/people.component';
-import { CardComponent } from './shared/card/card.component';
-import { FormComponent } from './shared/form/form.component';
+import { HomeComponent } from './home/index';
+import { PersonComponent } from './person/index';
+import { PeopleComponent } from "./people/index";
+import { CardComponent, FormComponent } from "./shared/index";
 
 @NgModule({
   imports: [
@@ -23,7 +22,7 @@ import { FormComponent } from './shared/form/form.component';
     RouterModule,
     FormsModule,
     MaterialModule.forRoot(),
-    AppRoutes
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,

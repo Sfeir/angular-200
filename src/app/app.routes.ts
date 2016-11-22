@@ -1,9 +1,8 @@
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // APP COMPONENTS
-import { HomeComponent } from './home/home.component';
-import { PeopleComponent } from './people/people.component';
+import { HomeComponent } from './home/index';
+import { PeopleComponent } from './people/index';
 
 const ROUTES: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -11,4 +10,4 @@ const ROUTES: Routes = [
   {path: 'people', component: PeopleComponent}
 ];
 
-export const AppRoutes = RouterModule.forRoot(ROUTES,{useHash: true});
+export const APP_ROUTES = RouterModule.forRoot(ROUTES,{useHash: true});
