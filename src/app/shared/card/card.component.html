@@ -20,7 +20,7 @@
     <md-card-content>
         <div class="contact-info">
             Manager&nbsp;:&nbsp;
-            <a href="#/people/1">{{ person.manager | na }}</a>
+            <a (click)="goToManagerIfExist()">{{ person.manager | na }}</a>
         </div>
         <div class="contact-info">
             Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
@@ -29,7 +29,7 @@
             Birth Date&nbsp;:&nbsp;<span>{{ person.birthDate | date:'dd/MM/yyyy' }}</span>
         </div>
         <div class="buttons-info">
-            <a md-button title="Locate" href="#/locator/1">
+            <a md-button title="Locate" href="javascript:void(0);">
                 <md-icon svgSrc="assets/images/icon-maps.svg"></md-icon>
             </a>
             <a md-button title="Edit" [routerLink]="['/edit', person.id]">
