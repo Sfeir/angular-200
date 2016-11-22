@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter, OnChanges } from '@angular/core';
 import { FormControl, Validators, FormGroup } from "@angular/forms";
 
 @Component({
@@ -6,7 +6,7 @@ import { FormControl, Validators, FormGroup } from "@angular/forms";
     templateUrl: 'form.component.html',
     styleUrls: ['form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, OnChanges {
     // private property to store update mode flag
     private _isUpdateMode: boolean;
     // private property to store model value
