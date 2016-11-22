@@ -1,7 +1,14 @@
 'use strict';
 
 var _ = require('underscore');
-var PEOPLES = require('./data/persons').peoples;
+var PEOPLES = require('./data/persons').peoples.map(
+    person => {
+        // work with timestamps, it's cleaner
+        person.entryDate = parseDate(person.entryDate);
+        person.birthDate = parseDate(person.birthDate);
+        return person;
+    }
+);
 
 
 exports.listAll = function (req, res) {
@@ -71,11 +78,12 @@ exports.create = function (req, res) {
         return res.status(409).json({error: 'La personne "' + lastname + ' ' + firstname + '" existe déjà.'});
     }
 
-    console.log(found);
-
     delete person.id;
     person.id = createId();
+    person.entryDate = parseDate('01/03/2016');
+    person.birthDate = parseDate('02/06/1991');
     PEOPLES.push(person);
+
     return res.status(200).json(person);
 };
 
@@ -94,9 +102,9 @@ exports.update = function (req, res) {
         return res.status(404).json({error: 'La personne avec l\'id "' + id + '" n\'existe pas.'});
     }
 
-    PEOPLES[index]=person;
+    Object.assign(PEOPLES[index], person);
 
-    return res.status(200).json(person);
+    return res.status(200).json(PEOPLES[index]);
 };
 
 
@@ -133,4 +141,9 @@ function getId(req) {
 
 function createId() {
     return new Date().getTime()+"";
+}
+
+function parseDate(stringDate) {
+    const dates = stringDate.split('/');
+    return (new Date(dates[2] + '/' + dates[1] + '/' + dates[0]).getTime());
 }
