@@ -221,7 +221,7 @@ exports.peoples = [
     },
     "isManager": true,
     "manager": "Mclaughlin",
-    "managerId": "5763cd4d3c307cf87ed4f944"
+    "managerId": "5763cd4dfa6f96cd26c65787"
   },
   {
     "id": "5763cd4d15e6c2c28b70f2e8",
