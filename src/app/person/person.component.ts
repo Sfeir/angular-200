@@ -1,26 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../shared/people-service/people.service';
-
-const BASE_URL = 'http://localhost:9000';
+import { PeopleService } from "../shared/index";
 
 @Component({
-  selector: 'sfeir-person',
-  templateUrl: 'person.component.html',
-  styleUrls: ['person.component.css']
+    selector: 'sfeir-person',
+    templateUrl: 'person.component.html',
+    styleUrls: ['person.component.css']
 })
 export class PersonComponent implements OnInit {
+    // private property to store person value
+    private _person: any;
 
-  private person: any = {};
+    /**
+     * Component constructor
+     */
+    constructor(private _peopleService: PeopleService) {
+        this._person = {};
+    }
 
-  constructor( private _service: PeopleService) { }
+    /**
+     * Returns private property _person
+     *
+     * @returns {any}
+     */
+    get person(): any {
+        return this._person;
+    }
 
-  ngOnInit() {
-    this.random();
-  }
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+        this._peopleService.fetch().subscribe((persons: any[]) => persons.length > 0 ? this._person = persons.shift() : this._person = {});
+    }
 
-  random() {
-    this._service.fetchRandom()
-      .subscribe((person) => this.person = person);
-  }
-
+    /**
+     * Returns random people
+     */
+    random() {
+        this._peopleService.fetchRandom().subscribe((person: any) => this._person = person);
+    }
 }
