@@ -1,52 +1,85 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleService } from '../shared/people-service/people.service';
 import 'rxjs/add/operator/mergeMap';
-
-const BASE_URL = 'http://localhost:9000';
+import { PeopleService } from "../shared/index";
 
 @Component({
-  selector: 'sfeir-people',
-  templateUrl: 'people.component.html',
-  styleUrls: ['people.component.css']
+    selector: 'sfeir-people',
+    templateUrl: 'people.component.html',
+    styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
+    // private property to store people value
+    private _people: any[];
+    // private property to store dialogStatus value
+    private _dialogStatus: string;
 
-  dialogStatus = 'inactive';
-  people = [];
+    /**
+     * Component constructor
+     */
+    constructor(private _peopleService: PeopleService) {
+        this._people = [];
+        this._dialogStatus = 'inactive';
+    }
 
-  constructor(
-    private _service: PeopleService
-  ) { }
+    /**
+     * Returns private property _people
+     *
+     * @returns {any[]}
+     */
+    get people(): any[] {
+        return this._people;
+    }
 
-  ngOnInit() {
-    this._service.fetch().subscribe((people) => {
-      this.people = people;
-    });
-  }
+    /**
+     * Returns private property _dialogStatus
+     *
+     * @returns {string}
+     */
+    get dialogStatus(): string {
+        return this._dialogStatus
+    }
 
-  delete(person) {
-    this._service.delete(person.id)
-      .subscribe((people) => {
-          this.people = people;
-        }
-      );
-  }
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+        this._peopleService.fetch().subscribe((people: any[]) => this._people = people);
+    }
 
-  add(person) {
-    this._service.create(person)
-      .flatMap( _ => this._service.fetch() )
-      .subscribe( people => {
-        this.people = people;
-        this.hideDialog();
-      })
-  }
+    /**
+     * Function to delete one person
+     *
+     * @param person
+     */
+    delete(person: any) {
+        this._peopleService.delete(person.id).subscribe((people: any[]) => this._people = people);
+    }
 
-  showDialog() {
-    this.dialogStatus = 'active';
-  }
+    /**
+     * Function to add one person
+     *
+     * @param person
+     */
+    add(person: any) {
+        this._peopleService.create(person)
+            .flatMap(_ => this._peopleService.fetch())
+            .subscribe((people: any[]) => {
+                this._people = people;
+                this.hideDialog();
+            });
+    }
 
-  hideDialog() {
-    this.dialogStatus = 'inactive';
-  }
+    /**
+     * Function to display modal
+     */
+    showDialog() {
+        this._dialogStatus = 'active';
+    }
 
+    /**
+     * Function to hide modal
+     */
+    hideDialog() {
+        this._dialogStatus = 'inactive';
+    }
 }
