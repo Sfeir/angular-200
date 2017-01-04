@@ -9,7 +9,8 @@
     <form novalidate [formGroup]="form">
 
       <p *ngIf="isUpdateMode">
-        <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" formControlName="id"></md-input>
+        <span style="width:100%">ID (disabled)</span><br/>
+        <span style="width:100%">{{model.id}}</span>
       </p>
 
       <table style="width: 100%" cellspacing="0">
@@ -48,11 +49,11 @@
         <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.sfeirEmail"><br>Invalid email (ex: chegham.w@sfeir.com)</span>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="Address" style="width:100%" formControlName="street" name="street"></md-input>
       </p>
 
-      <p>
+      <p formGroupName="address">
         <md-input placeholder="City" formControlName="city" name="city"></md-input>
         <md-input placeholder="Postal Code" formControlName="postalCode" name="postalCode"></md-input>
       </p>
