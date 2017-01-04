@@ -1,11 +1,11 @@
 <section [ngSwitch]="view">
 
-  <div *ngSwitchCase="'card'">
+  <section *ngSwitchCase="'card'">
     <sfeir-card *ngFor="let person of people" [person]="person" (personDelete)="delete($event)"></sfeir-card>
-  </div>
+  </section>
 
 
-  <div *ngSwitchCase="'list'">
+  <section *ngSwitchCase="'list'">
     <md-list>
       <md-list-item (click)="navigate(person)" *ngFor="let person of people" class="md-whiteframe-2dp md-card">
         <img md-list-avatar src="{{ person.photo }}">
@@ -16,7 +16,7 @@
         </p>
       </md-list-item>
     </md-list>
-  </div>
+  </section>
 
 </section>
 
