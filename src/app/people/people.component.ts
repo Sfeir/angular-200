@@ -1,54 +1,127 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/mergeMap';
-
-const BASE_URL = 'http://localhost:9000';
+import { environment } from "../../environments/environment";
 
 @Component({
-  selector: 'sfeir-people',
-  templateUrl: 'people.component.html',
-  styleUrls: ['people.component.css']
+    selector: 'sfeir-people',
+    templateUrl: 'people.component.html',
+    styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
+    // private property to store people value
+    private _people: any[];
+    // private property to store all backend URLs
+    private _backendURL: any;
+    // private property to store dialogStatus value
+    private _dialogStatus: string;
 
-  dialogStatus = 'inactive';
-  people = [];
+    /**
+     * Component constructor
+     */
+    constructor(private _http: Http) {
+        this._people = [];
+        this._backendURL = {};
+        this._dialogStatus = 'inactive';
 
-  constructor(
-    private _http: Http
-  ) { }
+        // build backend base url
+        let baseUrl = `${environment.backend.protocol}://${environment.backend.host}`;
+        if (environment.backend.port) {
+            baseUrl += `:${environment.backend.port}`;
+        }
 
-  ngOnInit() {
-    this._http.get(`${BASE_URL}/api/peoples/`)
-      .map( res => res.json() )
-      .subscribe( people => this.people = people);
-  }
+        // build all backend urls
+        Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
+    }
 
-  delete(person) {
-    this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
-      .map( res => res.json() )
-      .subscribe( people => this.people = people);
-  }
+    /**
+     * Returns private property _people
+     *
+     * @returns {any[]}
+     */
+    get people(): any[] {
+        return this._people;
+    }
 
-  add(person) {
-    let requestOptions = { headers: new Headers({'Content-Type': 'application/json'})};
-    this._http.post(`${BASE_URL}/api/peoples`, JSON.stringify(person), requestOptions)
-      .flatMap( () => {
-        return this._http.get(`${BASE_URL}/api/peoples/`)
-          .map( res => res.json() );
-      })
-      .subscribe( people => {
-        this.people = people;
-        this.hideDialog();
-      });
-  }
+    /**
+     * Returns private property _dialogStatus
+     *
+     * @returns {string}
+     */
+    get dialogStatus(): string {
+        return this._dialogStatus
+    }
 
-  showDialog() {
-    this.dialogStatus = 'active';
-  }
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+        this._http.get(this._backendURL.allPeople)
+            .map( res => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+                else {
+                    return [];
+                }
+            })
+            .subscribe( (people: any[]) => this._people = people);
+    }
 
-  hideDialog() {
-    this.dialogStatus = 'inactive';
-  }
+    /**
+     * Function to delete on person
+     *
+     * @param person
+     */
+    delete(person: any) {
+        this._http.delete(this._backendURL.onePeople.replace(':id', person.id))
+            .map( res => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+                else {
+                    return [];
+                }
+            })
+            .subscribe( (people: any[]) => this._people = people);
+    }
 
+    /**
+     * Function to add one person
+     *
+     * @param person
+     */
+    add(person: any) {
+        const requestOptions = { headers: new Headers({'Content-Type': 'application/json'})};
+        this._http.post(this._backendURL.allPeople, JSON.stringify(person), requestOptions)
+            .flatMap( () => {
+                return this._http.get(this._backendURL.allPeople)
+                    .map( res => {
+                        if (res.status === 200) {
+                            return res.json();
+                        }
+                        else {
+                            return [];
+                        }
+                    });
+            })
+            .subscribe( (people: any[]) => {
+                this._people = people;
+                this.hideDialog();
+            });
+    }
+
+    /**
+     * Function to display modal
+     */
+    showDialog() {
+        this._dialogStatus = 'active';
+    }
+
+    /**
+     * Function to hide modal
+     */
+    hideDialog() {
+        this._dialogStatus = 'inactive';
+    }
 }
