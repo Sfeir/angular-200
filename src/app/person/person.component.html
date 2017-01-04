@@ -3,6 +3,6 @@
 </section>
 
 
-<button md-fab (click)="random()">
+<button md-fab (click)="random()" *ngIf="!isPerson">
   <i class="material-icons">autorenew</i>
 </button>
