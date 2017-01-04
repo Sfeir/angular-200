@@ -1,24 +1,63 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'sfeir-card',
-  templateUrl: 'card.component.html',
-  styleUrls: ['card.component.css']
+    selector: 'sfeir-card',
+    templateUrl: 'card.component.html',
+    styleUrls: ['card.component.css']
 })
 export class CardComponent implements OnInit {
+    // private property to store person value
+    private _person: any;
+    // private property to store delete$ value
+    private _delete$: EventEmitter<any>;
 
-  @Input() person = {};
-  @Output('personDelete') delete$;
+    /**
+     * Component constructor
+     */
+    constructor() {
+        this._person = {};
+        this._delete$ = new EventEmitter();
+    }
 
-  constructor() {
-    this.delete$ = new EventEmitter();
-  }
+    /**
+     * Returns private property _person
+     *
+     * @returns {any}
+     */
+    get person(): any {
+        return this._person;
+    }
 
-  ngOnInit() {
-  }
+    /**
+     * Sets private property _person
+     *
+     * @param person
+     */
+    @Input() set person(person: any) {
+        this._person = person;
+    }
 
-  delete(person) {
-    this.delete$.emit(person);
-  }
+    /**
+     * Returns private property _delete$
+     *
+     * @returns {EventEmitter<any>}
+     */
+    @Output('personDelete') get delete$(): EventEmitter<any> {
+        return this._delete$;
+    }
 
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+    }
+
+    /**
+     * Function to emit event to delete current person
+     *
+     * @param person
+     */
+    delete(person: any) {
+        this._delete$.emit(person);
+    }
 }
