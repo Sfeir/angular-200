@@ -6,7 +6,7 @@
         <span>{{ person.firstname }} {{ person.lastname }}</span>
       </a>
     </md-card-title>
-    <md-card-subtitle>{{ person.entity }}</md-card-subtitle>
+    <md-card-subtitle>{{ person.entity | na }}</md-card-subtitle>
     <md-card-subtitle class="contact-info">
       <md-icon>email</md-icon>
       <a href="mailto:{{ person.firstname }} {{ person.lastname }}&lt;{{ person.email }}&gt;" title="Send an email to {{ person.firstname }} {{ person.lastname }}"
@@ -21,7 +21,7 @@
   <md-card-content>
     <div class="contact-info">
       Manager&nbsp;:&nbsp;
-      <a href="#/people/1">{{ person.manager }}</a>
+      <a href="#/people/1">{{ person.manager | na }}</a>
     </div>
     <div class="contact-info">
       Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
