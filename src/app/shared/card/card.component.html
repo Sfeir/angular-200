@@ -30,7 +30,7 @@
       <a md-button title="Locate" href="#/locator/1">
         <md-icon>map</md-icon>
       </a>
-      <a md-button title="Edit" href="#/edit/1">
+      <a md-button title="Edit" [routerLink]="['/edit', person.id]">
         <md-icon>create</md-icon>
       </a>
       <a md-button title="Delete">
