@@ -9,7 +9,6 @@ module.exports = function(config) {
             require('karma-jasmine'),
             require('karma-mocha-reporter'),
             require('karma-chrome-launcher'),
-            require('karma-remap-istanbul'),
             require('angular-cli/plugins/karma')
         ],
         files: [
