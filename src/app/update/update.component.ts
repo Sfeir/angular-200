@@ -5,8 +5,8 @@ import { PeopleService } from "../shared/index";
 
 @Component({
   selector: 'sfeir-update',
-  templateUrl: 'update.component.html',
-  styleUrls: ['update.component.css']
+  templateUrl: './update.component.html',
+  styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
   // private property to store person value
@@ -44,6 +44,9 @@ export class UpdateComponent implements OnInit {
    * OnInit implementation
    */
   ngOnInit() {
+
+    console.log(this._route.params);
+
     this._route.params
         .map((params: any) => params.id)
         .flatMap((id: string) => this._peopleService.fetchOne(id))

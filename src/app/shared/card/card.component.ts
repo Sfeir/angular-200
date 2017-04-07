@@ -3,8 +3,8 @@ import { Router } from "@angular/router";
 
 @Component({
     selector: 'sfeir-card',
-    templateUrl: 'card.component.html',
-    styleUrls: ['card.component.css']
+    templateUrl: './card.component.html',
+    styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
     // private property to store person value

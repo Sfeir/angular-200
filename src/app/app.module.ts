@@ -10,11 +10,13 @@ import { MaterialModule } from '@angular/material';
 import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home/index';
 import { PersonComponent } from './person/index';
 import { PeopleComponent } from "./people/index";
-import { CardComponent, FormComponent, PeopleService, NaPipe, SfeirBadgeDirective } from "./shared/index";
-import { UpdateComponent } from "./update/index";
+import { CardComponent, FormComponent, PeopleService } from "./shared/index";
+import { NaPipe } from './shared/na-pipe/na.pipe';
+import { SfeirBadgeDirective } from './shared/badge/sfeir-badge.directive';
+import { HomeComponent } from './home/home.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -34,7 +36,11 @@ import { UpdateComponent } from "./update/index";
     FormComponent,
     UpdateComponent,
     NaPipe,
-    SfeirBadgeDirective
+    SfeirBadgeDirective,
+    NaPipe,
+    SfeirBadgeDirective,
+    HomeComponent,
+    UpdateComponent
   ],
   providers: [
     PeopleService
