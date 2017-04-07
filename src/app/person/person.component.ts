@@ -4,8 +4,8 @@ import { PeopleService } from "../shared/index";
 
 @Component({
     selector: 'sfeir-person',
-    templateUrl: 'person.component.html',
-    styleUrls: ['person.component.css']
+    templateUrl: './person.component.html',
+    styleUrls: ['./person.component.css']
 })
 export class PersonComponent implements OnInit {
     // private property to store person value

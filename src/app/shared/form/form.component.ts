@@ -5,8 +5,8 @@ import { CustomValidators } from "./custom-validators";
 
 @Component({
     selector: 'sfeir-form',
-    templateUrl: 'form.component.html',
-    styleUrls: ['form.component.css']
+    templateUrl: './form.component.html',
+    styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit, OnChanges {
     // private property to store update mode flag
