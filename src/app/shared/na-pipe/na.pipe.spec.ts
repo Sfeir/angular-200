@@ -8,4 +8,22 @@ describe('NaPipe', () => {
     let pipe = new NaPipe();
     expect(pipe).toBeTruthy();
   });
+
+  describe('should return N/A...', () => {
+    it('for NULL', () => {
+      // todo
+    });
+
+    it('for UNDEFINED', () => {
+      // todo
+    });
+
+    it('for "" (empty string)', () => {
+      // todo
+    });
+  });
+  describe('Should not return N/A', () => {
+    // todo
+  });
+
 });

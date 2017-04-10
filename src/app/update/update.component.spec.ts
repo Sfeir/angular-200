@@ -11,11 +11,23 @@ import { UpdateComponent } from './update.component';
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 import { Observable } from "rxjs/Observable";
 
-export class MockRouter {
-  navigate(commands: any[], extras?: any): Promise<boolean> {
-    return Promise.resolve(true);
-  }
-}
+const expectedResponse = {
+  id: '123',
+  firstname: 'Wassim',
+  lastname: 'Chegham',
+  email: 'chegham.w@sfeir.com',
+  address: {
+    street: '48 Rue Jacques Dulud',
+    city: 'Neuilly-sur-Seine',
+    postalCode: '92200'
+  },
+  phone: '0141385200',
+  isManager: false
+};
+
+export const mockRouter = {
+  navigate: jasmine.createSpy('navigate')
+};
 
 export class MockActivatedRoute {
   private _params: {};
@@ -33,11 +45,11 @@ export class MockActivatedRoute {
 }
 
 export class MockPeopleService {
-  update(person: any) {
-    return Observable.create(true);
-  }
   fetchOne(id) {
-    return Observable.create(o => o.next({}));
+    return Observable.create(o => o.next(expectedResponse));
+  }
+  update(person: any) {
+    return Observable.create(o => o.next(Object.assign(expectedResponse, person)));
   }
 }
 
@@ -45,34 +57,46 @@ describe('UpdateComponent', () => {
   let component: UpdateComponent;
   let fixture: ComponentFixture<UpdateComponent>;
   let mockActivatedRoute: MockActivatedRoute;
+  let mockPeopleService: MockPeopleService;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
 
     mockActivatedRoute = new MockActivatedRoute();
-    mockActivatedRoute.params = { id: 12345 };
+    mockPeopleService = new MockPeopleService();
 
     TestBed.configureTestingModule({
       declarations: [UpdateComponent],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
-        { provide: Router, useClass: MockRouter },
-        { provide: PeopleService, useClass: MockPeopleService }
+        { provide: Router, useValue: mockRouter },
+        { provide: PeopleService, useValue: mockPeopleService }
       ],
       // Tells the compiler not to error on unknown elements and attributes
       schemas: [NO_ERRORS_SCHEMA]
     });
 
-  }));
+  });
 
-  beforeEach(() => {
+  it('should create an instance of UpdateComponent', () => {
     fixture = TestBed.createComponent(UpdateComponent);
     component = fixture.componentInstance;
+    mockActivatedRoute.params = { id: 123 };
+
     fixture.detectChanges();
+
+    expect(component).toBeTruthy('The instance of UpdateComponent was not created!');
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should fetch person with id=123', () => {
+    // todo
   });
+
+  it('should navigate to /people when updating info', () => {
+    // todo
+  });
+
+  it('should navigate to /people when cancelling', () => {
+    // todo
+  });
+
 });
-
-describe('', () => {});
