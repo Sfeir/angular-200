@@ -45,8 +45,6 @@ export class UpdateComponent implements OnInit {
    */
   ngOnInit() {
 
-    console.log(this._route.params);
-
     this._route.params
         .map((params: any) => params.id)
         .flatMap((id: string) => this._peopleService.fetchOne(id))
