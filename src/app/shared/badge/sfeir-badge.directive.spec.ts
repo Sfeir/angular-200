@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, By } from '@angular/platform-browser';
 import { inject } from '@angular/core/testing';
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { SfeirBadgeDirective } from './sfeir-badge.directive';
-import { ElementRef, Renderer } from "@angular/core";
+import { ElementRef, Renderer, Component } from "@angular/core";
 
 export class MockElementRef extends ElementRef {
   constructor() { super(null); }
@@ -14,27 +14,50 @@ export class MockRenderer {
   setElementProperty(...args) {}
 }
 
+@Component({
+  selector: 'test-badge-directive',
+  template: ``
+})
+export class HostComponentForBadgeDirective {
+  person = {};
+}
+
+let MANAGER_BADGE_HTML = '<i class="material-icons">supervisor_account</i>';
+
 describe('SfeirBadgeDirective', () => {
 
-  let elementRef: ElementRef;
-  let renderer: Renderer;
-  
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        { provide: ElementRef, useCalss: MockElementRef },
-        { provide: Renderer, useClass: MockRenderer }
-      ]
-    }).compileComponents();
+      declarations: [HostComponentForBadgeDirective, SfeirBadgeDirective]
+    });
   });
 
-  beforeEach(inject([ElementRef, Renderer], (elementRef, renderer) => {
-    elementRef = elementRef;
-    renderer = renderer;
-  }))
-
-  it('should create an instance', () => {
-    let directive = new SfeirBadgeDirective(elementRef, renderer);
-    expect(directive).toBeTruthy();
+  it('should create an instance of sfeir-badge', () => {
+    let fixture = createTestComponent('<div sfeir-badge></div>');
+    expect( fixture ).toBeDefined();
   });
+
+  it('should not add badge icon when isManager === false', () => {
+    let fixture = createTestComponent('<div sfeir-badge [person]="person"></div>');
+    fixture.componentInstance.person = {isManager: false};
+    fixture.detectChanges();
+    const divElement = fixture.nativeElement.querySelector('div');
+    expect(divElement.innerHTML).toBe('');
+  });
+
+  it('should add badge icon when isManager === true', () => {
+    let fixture = createTestComponent('<div sfeir-badge [person]="person"></div>');
+    fixture.componentInstance.person = {isManager: true};
+    fixture.detectChanges();
+    const divElement = fixture.nativeElement.querySelector('div');
+    expect(divElement.innerHTML).toBe(MANAGER_BADGE_HTML);
+  });
+
+
 });
+
+function createTestComponent(template: string): ComponentFixture<HostComponentForBadgeDirective> {
+  return TestBed
+    .overrideComponent(HostComponentForBadgeDirective, {set: {template}} )
+    .createComponent(HostComponentForBadgeDirective);
+}
