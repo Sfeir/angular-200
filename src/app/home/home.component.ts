@@ -6,23 +6,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    // private property to store name value
-    private _name:string;
-
-    /**
-     * Component constructor
-     */
+    name:string;
+    
     constructor() {
-        this._name = 'Angular 2';
-    }
-
-    /**
-     * Returns private property _name
-     *
-     * @returns {string}
-     */
-    get name(): string {
-        return this._name;
+        this.name = 'Angular 2';
     }
 
     /**
