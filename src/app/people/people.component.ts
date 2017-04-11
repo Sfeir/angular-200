@@ -2,8 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/mergeMap';
-
-const BASE_URL = 'http://localhost:9000';
+import { PeopleService } from "../shared";
 
 @Component({
     selector: 'sfeir-people',
@@ -15,7 +14,7 @@ export class PeopleComponent implements OnInit {
     people: any[];
     dialogStatus = 'inactive';
 
-    constructor(private _http: Http) {}    
+    constructor(private _peopleService: PeopleService) {}
 
 
     /**
@@ -31,21 +30,18 @@ export class PeopleComponent implements OnInit {
      * OnInit implementation
      */
     ngOnInit() {
-        this._http.get(`${BASE_URL}/api/peoples/`)
-            .map(res => res.json())            
+        this._peopleService.fetch()
             .subscribe( (people: any[]) => this.people = people);
     }
 
     delete(person: any) {
-        this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
-            .map(res => res.json())            
+        this._peopleService.delete(person.id)            
             .subscribe( (people: any[]) => this.people = people);
     }
 
     add(person: any) {        
-        this._http.post(`${BASE_URL}/api/peoples/`,person)
-            .flatMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
-            .map(res => res.json())            
+        this._peopleService.create(person)
+            .flatMap( res => this._peopleService.fetch())            
             .subscribe( (people: any[]) => {
                 this.people = people;
                 this.hideDialog();
