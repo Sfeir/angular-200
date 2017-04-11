@@ -2,31 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from "../../environments/environment";
 
+const BASE_URL = 'http://localhost:9000';
+
 @Component({
     selector: 'sfeir-person',
     templateUrl: 'person.component.html',
     styleUrls: ['person.component.css']
 })
-export class PersonComponent implements OnInit {    
-    private person: any;
-    
-    constructor() {
-        this.person = PEOPLE[0];
+export class PersonComponent implements OnInit {
+    private person: any = {};
+
+    constructor(private _http: Http) {
+        
     }
-    
+
     /**
      * OnInit implementation
      */
     ngOnInit() {
-        this._http.get(this._backendURL.allPeople)
-            .map( res => res.json() )
-            .subscribe( (persons: any[]) => this._person = persons.shift());
+        this._http.get(`${BASE_URL}/api/peoples/`)
+            .map(res => res.json())
+            .subscribe(person => this.person = person[0]);
     }
 
     /**
      * Returns random people
      */
     random() {
-        this.person = PEOPLE[ (Math.random() * PEOPLE.length) | 0 ];
+        this._http.get(`${BASE_URL}/api/peoples/random`)
+            .map(res => res.json())
+            .subscribe(person => this.person = person);
     }
 }
