@@ -7,38 +7,13 @@ import { environment } from "../../environments/environment";
     templateUrl: 'person.component.html',
     styleUrls: ['person.component.css']
 })
-export class PersonComponent implements OnInit {
-    // private property to store person value
-    private _person: any;
-    // private property to store all backend URLs
-    private _backendURL: any;
-
-    /**
-     * Component constructor
-     */
-    constructor(private _http: Http) {
-        this._person = {};
-        this._backendURL = {};
-
-        // build backend base url
-        let baseUrl = `${environment.backend.protocol}://${environment.backend.host}`;
-        if (environment.backend.port) {
-            baseUrl += `:${environment.backend.port}`;
-        }
-
-        // build all backend urls
-        Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
+export class PersonComponent implements OnInit {    
+    private person: any;
+    
+    constructor() {
+        this.person = PEOPLE[0];
     }
-
-    /**
-     * Returns private property _person
-     *
-     * @returns {any}
-     */
-    get person(): any {
-        return this._person;
-    }
-
+    
     /**
      * OnInit implementation
      */
