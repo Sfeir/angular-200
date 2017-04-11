@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/mergeMap';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -10,18 +12,11 @@ const BASE_URL = 'http://localhost:9000';
 })
 export class PeopleComponent implements OnInit {
     
-    private people: any[];
-    
+    people: any[];
+    dialogStatus = 'inactive';
+
     constructor(private _http: Http) {}    
 
-    /**
-     * Returns private property _dialogStatus
-     *
-     * @returns {string}
-     */
-    get dialogStatus(): string {
-        return this._dialogStatus
-    }
 
     /**
      * Returns private property _view
@@ -46,4 +41,24 @@ export class PeopleComponent implements OnInit {
             .map(res => res.json())            
             .subscribe( (people: any[]) => this.people = people);
     }
+
+    add(person: any) {        
+        this._http.post(`${BASE_URL}/api/peoples/`,person)
+            .flatMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
+            .map(res => res.json())            
+            .subscribe( (people: any[]) => {
+                this.people = people;
+                this.hideDialog();
+            });
+    }
+
+    showDialog() {
+        this.dialogStatus = 'active';
+    }
+
+    hideDialog() {
+        this.dialogStatus = 'inactive';
+    }
 }
+
+
