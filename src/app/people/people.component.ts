@@ -32,35 +32,9 @@ export class PeopleComponent implements OnInit {
             .subscribe( (people: any[]) => this.people = people);
     }
 
-    /**
-     * Function to delete on person
-     *
-     * @param person
-     */
     delete(person: any) {
-        this._http.delete(this._backendURL.onePeople.replace(':id', person.id))
-            .map( res => {
-                if (res.status === 200) {
-                    return res.json();
-                }
-                else {
-                    return [];
-                }
-            })
-            .subscribe( (people: any[]) => this._people = people);
-    }
-
-    /**
-     * Function to display modal
-     */
-    showDialog() {
-        this._dialogStatus = 'active';
-    }
-
-    /**
-     * Function to hide modal
-     */
-    hideDialog() {
-        this._dialogStatus = 'inactive';
+        this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
+            .map(res => res.json())            
+            .subscribe( (people: any[]) => this.people = people);
     }
 }

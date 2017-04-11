@@ -8,19 +8,11 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 export class CardComponent implements OnInit {
     
     @Input() person: any;
+    @Output('personDelete')  delete$: EventEmitter<any> 
 
     constructor() {
         this.person = {};
-    }
-
-
-    /**
-     * Returns private property _delete$
-     *
-     * @returns {EventEmitter<any>}
-     */
-    @Output('personDelete') get delete$(): EventEmitter<any> {
-        return this._delete$;
+        this.delete$= new EventEmitter();
     }
 
     /**
@@ -35,6 +27,6 @@ export class CardComponent implements OnInit {
      * @param person
      */
     delete(person: any) {
-        this._delete$.emit(person);
+        this.delete$.emit(person);
     }
 }
