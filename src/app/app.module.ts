@@ -6,9 +6,7 @@ import 'hammerjs';
 import { MaterialModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-
-
-//import { PeopleAppComponent } from './app.component';
+import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
@@ -17,10 +15,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MaterialModule.forRoot()
   ],
   declarations: [
-    //PeopleAppComponent
+    PeopleAppComponent
   ],
   bootstrap: [
-    //PeopleAppComponent
+    PeopleAppComponent
   ]
 })
 export class AppModule { }
