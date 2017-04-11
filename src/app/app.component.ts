@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
     templateUrl: 'app.component.html',
     styleUrls: ['app.component.css']
 })
-export class PeopleAppComponent {}
+export class PeopleAppComponent {    
+    name:string;
+    
+    constructor() {
+        this.name = 'Angular 2';
+    }
+}
