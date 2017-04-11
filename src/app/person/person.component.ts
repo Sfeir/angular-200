@@ -27,8 +27,6 @@ export class PersonComponent implements OnInit {
      * Returns random people
      */
     random() {
-        this._http.get(this._backendURL.randomPeople)
-            .map( res => res.json() )
-            .subscribe( (person: any) => this._person = person);
+        this.person = PEOPLE[ (Math.random() * PEOPLE.length) | 0 ];
     }
 }
