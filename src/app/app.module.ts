@@ -1,40 +1,27 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
+import 'hammerjs';
 import { MaterialModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
-import { HomeComponent } from './home/index';
-import { PersonComponent } from './person/index';
-import { PeopleComponent } from "./people/index";
-import { CardComponent, FormComponent } from "./shared/index";
+
+//import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    HttpModule,
-    RouterModule,
-    FormsModule,
-    MaterialModule.forRoot(),
-    APP_ROUTES
+    BrowserAnimationsModule,
+    MaterialModule.forRoot()
   ],
   declarations: [
-    PeopleAppComponent,
-    HomeComponent,
-    PersonComponent,
-    PeopleComponent,
-    CardComponent,
-    FormComponent
+    //PeopleAppComponent
   ],
   providers: [ ],
   bootstrap: [
-    PeopleAppComponent
+    //PeopleAppComponent
   ]
 })
 export class AppModule { }
