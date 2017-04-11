@@ -16,28 +16,25 @@
             <a href="tel:{{ person.phone }}" title="Call {{ person.firstname }}">{{ person.phone }}</a>
         </md-card-subtitle>
 
-    </md-card-title-group>
-    <md-card-content>
-        <div class="contact-info">
-            Manager&nbsp;:&nbsp;
-            <a [routerLink]="['/person', person.manager]">{{ person.manager | na }}</a>
-        </div>
-        <div class="contact-info">
-            Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
-        </div>
-        <div class="contact-info">
-            Birth Date&nbsp;:&nbsp;<span>{{ person.birthDate | date:'dd/MM/yyyy' }}</span>
-        </div>
-        <div class="buttons-info">
-            <a md-button title="Locate" href="#/locator/1">
-                <md-icon>map</md-icon>
-            </a>
-            <a md-button title="Edit" [routerLink]="['/edit', person.id]">
-                <md-icon>create</md-icon>
-            </a>
-            <a md-button title="Delete" (click)="delete(person)">
-                <md-icon>delete</md-icon>
-            </a>
-        </div>
-    </md-card-content>
+  </md-card-title-group>
+  <md-card-content>
+    <div class="contact-info">
+      Manager&nbsp;:&nbsp;
+      <a href="#/people/1">{{ person.manager }}</a>
+    </div>
+    <div class="contact-info">
+      Location&nbsp;:&nbsp;<a href="http://www.sfeir.com/contact/">SFEIR</a>
+    </div>
+    <div class="buttons-info">
+      <a md-button title="Locate" href="#/locator/1">
+        <md-icon>map</md-icon>
+      </a>
+      <a md-button title="Edit" href="#/edit/1">
+        <md-icon>create</md-icon>
+      </a>
+      <a md-button title="Delete" (click)="delete(person)">
+        <md-icon>delete</md-icon>
+      </a>
+    </div>
+  </md-card-content>
 </md-card>
