@@ -9,54 +9,72 @@
     <form novalidate [formGroup]="form">
 
       <p *ngIf="isUpdateMode">
-        <md-input-container>
-              <input [ngModel]="model.id" mdInput style="width:100%" placeholder="ID (disabled)" disabled  name="id">
-        </md-input-container>        
+        <span style="width:100%">ID (disabled)</span><br/>
+        <span style="width:100%">{{model.id}}</span>
       </p>
 
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-           <md-input-container>
-              <input [(ngModel)]="model.firstname" mdInput placeholder="First name *" name="firstname">
-            </md-input-container>
-            <md-input-container>
-              <input [(ngModel)]="model.lastname" mdInput placeholder="Last Name *" name="lastname">
-            </md-input-container>
+            <p [class.errors]="form.controls.firstname.dirty && form.controls.firstname.invalid">
+              <md-input-container>
+                <input formControlName="firstname" mdInput placeholder="First name" name="firstname">
+              </md-input-container>
+              
+
+              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.required"><br>First name is required</span>
+              <span *ngIf="form.controls.firstname.dirty && form.controls.firstname.errors?.minlength"><br>First name is 2 chars min</span>
+
+            </p>
+
+            <p [class.errors]="form.controls.lastname.dirty && form.controls.lastname.invalid">
+              <md-input-container>
+                <input formControlName="lastname" mdInput placeholder="Last Name" name="lastname">
+              </md-input-container>
+
+              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.required"><br>Last name is required</span>
+              <span *ngIf="form.controls.lastname.dirty && form.controls.lastname.errors?.minlength"><br>Last name is 2 chars min</span>
+
+            </p>
+
           </td>
           <td class="align-right">
-            <img width="100" src="{{ model.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}"/>
-            <input type="hidden" [(ngModel)]="model.photo" name="photo">
+            <img width="100" src="{{ form.controls.photo.value }}"/>
+            <input type="hidden" formControlName="photo" name="photo">
           </td>
         </tr>
       </table>
 
-      <p>
+      <p [class.errors]="form.controls.email.dirty && form.controls.email.invalid">
         <md-input-container>
-            <input [(ngModel)]="model.email" mdInput placeholder="Email *" style="width:100%" name="email">
+            <input formControlName="email" mdInput placeholder="Email *" style="width:100%" name="email">
+        </md-input-container>        
+
+        <span *ngIf="form.controls.email.dirty && form.controls.email.errors?.required">Email is mandatory</span>
+      </p>
+
+      <p formGroupName="address">
+        <md-input-container>
+            <input formControlName="street" mdInput placeholder="Address" style="width:100%" name="street">
         </md-input-container>        
       </p>
 
-  
-      <p ngModelGroup="address">
+      <p formGroupName="address">
         <md-input-container>
-            <input [(ngModel)]="model.address.street" mdInput placeholder="Address" style="width:100%" name="street">
+            <input formControlName="city" mdInput placeholder="City" name="city">
+        </md-input-container>
+        <md-input-container>
+            <input formControlName="postalCode" mdInput placeholder="Postal Code" name="postalCode">
         </md-input-container>
       </p>
 
-      <p ngModelGroup="address">
+      <p [class.errors]="form.controls.phone.dirty && form.controls.phone.invalid">        
         <md-input-container>
-            <input [(ngModel)]="model.address.city" mdInput placeholder="City" name="city">
+            <input formControlName="phone" mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
         </md-input-container>
-        <md-input-container>
-            <input [(ngModel)]="model.address.postalCode" mdInput placeholder="Postal Code" name="postalCode">
-        </md-input-container>
-      </p>
 
-      <p>
-        <md-input-container>
-            <input [(ngModel)]="model.phone" mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
-        </md-input-container>
+        <span *ngIf="form.controls.phone.dirty && form.controls.phone.errors?.required">Phone number is mandatory</span>
+        <span *ngIf="form.controls.phone.dirty && !form.controls.phone.errors?.required && form.controls.phone.errors?.pattern">Phone number must be 10 digits</span>
       </p>
 
       <p>
@@ -73,3 +91,4 @@
   </md-card-actions>
 
 </md-card>
+
