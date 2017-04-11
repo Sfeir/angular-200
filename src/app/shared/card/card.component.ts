@@ -7,36 +7,13 @@ import { Router } from "@angular/router";
     styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-    // private property to store person value
-    private _person: any;
-    // private property to store delete$ value
-    private _delete$: EventEmitter<any>;
+    
+    @Input() person: any;
 
-    /**
-     * Component constructor
-     */
-    constructor(private _router: Router) {
-        this._person = {};
-        this._delete$ = new EventEmitter();
+    constructor() {
+        this.person = {};
     }
 
-    /**
-     * Returns private property _person
-     *
-     * @returns {any}
-     */
-    get person(): any {
-        return this._person;
-    }
-
-    /**
-     * Sets private property _person
-     *
-     * @param person
-     */
-    @Input() set person(person: any) {
-        this._person = person;
-    }
 
     /**
      * Returns private property _delete$
