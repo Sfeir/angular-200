@@ -14,7 +14,8 @@ import { PersonComponent } from './person';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    HttpModule
   ],
   declarations: [
     PeopleAppComponent,
