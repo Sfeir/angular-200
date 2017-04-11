@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import 'hammerjs';
 import { MaterialModule } from '@angular/material';
@@ -26,7 +26,7 @@ import { UpdateComponent } from './update';
     MaterialModule.forRoot(),
     HttpModule,
     RouterModule,
-    FormsModule,
+    ReactiveFormsModule,
     APP_ROUTES
   ],
   declarations: [
