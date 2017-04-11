@@ -9,21 +9,23 @@
     <form #f="ngForm">
 
       <p *ngIf="isUpdateMode">
-        <md-input style="width:100%" placeholder="ID (disabled)" disabled  name="id" [ngModel]="model.id"></md-input>
+        <md-input-container>
+              <input [ngModel]="model.id" mdInput style="width:100%" placeholder="ID (disabled)" disabled  name="id">
+        </md-input-container>        
       </p>
 
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
            <md-input-container>
-              <input ngModel mdInput placeholder="First name *" name="firstname">
+              <input [(ngModel)]="model.firstname" mdInput placeholder="First name *" name="firstname">
             </md-input-container>
             <md-input-container>
-              <input ngModel mdInput placeholder="Last Name *" name="lastname">
+              <input [(ngModel)]="model.lastname" mdInput placeholder="Last Name *" name="lastname">
             </md-input-container>
           </td>
           <td class="align-right">
-            <img width="100" src="{{ model.photo }}"/>
+            <img width="100" src="{{ model.photo || 'https://randomuser.me/api/portraits/lego/6.jpg' }}"/>
             <input type="hidden" [(ngModel)]="model.photo" name="photo">
           </td>
         </tr>
@@ -31,29 +33,29 @@
 
       <p>
         <md-input-container>
-            <input ngModel mdInput placeholder="Email *" style="width:100%" name="email">
+            <input [(ngModel)]="model.email" mdInput placeholder="Email *" style="width:100%" name="email">
         </md-input-container>        
       </p>
 
   
       <p ngModelGroup="address">
         <md-input-container>
-            <input ngModel mdInput placeholder="Address" style="width:100%" name="street">
+            <input [(ngModel)]="model.address.street" mdInput placeholder="Address" style="width:100%" name="street">
         </md-input-container>
       </p>
 
       <p ngModelGroup="address">
         <md-input-container>
-            <input ngModel mdInput placeholder="City" name="city">
+            <input [(ngModel)]="model.address.city" mdInput placeholder="City" name="city">
         </md-input-container>
         <md-input-container>
-            <input ngModel mdInput placeholder="Postal Code" name="postalCode">
+            <input [(ngModel)]="model.address.postalCode" mdInput placeholder="Postal Code" name="postalCode">
         </md-input-container>
       </p>
 
       <p>
         <md-input-container>
-            <input ngModel mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
+            <input [(ngModel)]="model.phone" mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
         </md-input-container>
       </p>
 
