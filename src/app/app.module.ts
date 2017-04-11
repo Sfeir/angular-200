@@ -15,8 +15,7 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
-import { CardComponent } from './shared/card';
-import { FormComponent } from './shared/form';
+import { CardComponent, FormComponent, PeopleService } from "./shared";
 import { UpdateComponent } from './update';
 
 @NgModule({
@@ -37,6 +36,9 @@ import { UpdateComponent } from './update';
     CardComponent,
     FormComponent,
     UpdateComponent
+  ],
+  providers: [
+    PeopleService
   ],
   bootstrap: [
     PeopleAppComponent
