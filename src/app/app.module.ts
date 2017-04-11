@@ -6,6 +6,8 @@ import 'hammerjs';
 import { MaterialModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { APP_ROUTES } from './app.routes';
+
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PersonComponent } from './person';
@@ -15,7 +17,9 @@ import { PersonComponent } from './person';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule.forRoot(),
-    HttpModule
+    HttpModule,
+    RouterModule,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
