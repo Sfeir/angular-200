@@ -22,4 +22,10 @@ export class PeopleComponent implements OnInit {
             .map(res => res.json())            
             .subscribe( (people: any[]) => this.people = people);
     }
+
+    delete(person: any) {
+        this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
+            .map(res => res.json())            
+            .subscribe( (people: any[]) => this.people = people);
+    }
 }
