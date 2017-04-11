@@ -20,7 +20,7 @@ import { HomeComponent } from './home';
     HomeComponent
   ],
   bootstrap: [
-    HomeComponent
+    PeopleAppComponent
   ]
 })
 export class AppModule { }
