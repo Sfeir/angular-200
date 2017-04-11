@@ -6,35 +6,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
     styleUrls: ['form.component.css']
 })
 export class FormComponent implements OnInit {
-    // private property to store cancel$ value
-    private _cancel$: EventEmitter<any>;
-    // private property to store add$ value
-    private _add$: EventEmitter<any>;
+    
+    @Output('cancel') cancel$: EventEmitter<any>;    
+    @Output('personAdd') add$: EventEmitter<any>;
 
-    /**
-     * Component constructor
-     */
+   
     constructor() {
-        this._add$ = new EventEmitter();
-        this._cancel$ = new EventEmitter();
-    }
-
-    /**
-     * Returns private property _cancel$
-     *
-     * @returns {EventEmitter<any>}
-     */
-    @Output('cancel') get cancel$(): EventEmitter<any> {
-        return this._cancel$;
-    }
-
-    /**
-     * Returns private property _add$
-     *
-     * @returns {EventEmitter<any>}
-     */
-    @Output('personAdd') get add$(): EventEmitter<any> {
-        return this._add$;
+        this.add$ = new EventEmitter();
+        this.cancel$ = new EventEmitter();
     }
 
     /**
@@ -43,19 +22,11 @@ export class FormComponent implements OnInit {
     ngOnInit() {
     }
 
-    /**
-     * Function to emit event to cancel process
-     */
     cancel() {
-        this._cancel$.emit();
+        this.cancel$.emit();
     }
-
-    /**
-     * Function to emit event to add new person
-     *
-     * @param person
-     */
+    
     add(person: any) {
-        this._add$.emit(person);
+        this.add$.emit(person);
     }
 }
