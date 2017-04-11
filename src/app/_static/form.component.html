@@ -8,37 +8,53 @@
     <form>
 
       <p>
-        <md-input style="width:100%" placeholder="ID (disabled)" disabled name="id"></md-input>
+        <md-input-container>
+          <input mdInput style="width:100%" placeholder="ID (disabled)" disabled name="id">
+        </md-input-container>
       </p>
 
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <md-input placeholder="First name *" name="firstname"></md-input>
-            <md-input placeholder="Last Name *" name="lastname"></md-input>
+            <md-input-container>
+              <input mdInput placeholder="First name *" name="firstname">
+            </md-input-container>
+            <md-input-container>
+              <input mdInput placeholder="Last Name *" name="lastname">
+            </md-input-container>
           </td>
           <td class="align-right">
-            <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg"/>
+            <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg" />
             <input type="hidden" name="photo">
           </td>
         </tr>
       </table>
 
       <p>
-        <md-input placeholder="Email *" style="width:100%" name="email"></md-input>
+        <md-input-container>
+            <input mdInput placeholder="Email *" style="width:100%" name="email">
+        </md-input-container>
       </p>
 
       <p>
-        <md-input placeholder="Address" style="width:100%" name="street"></md-input>
+        <md-input-container>
+            <input mdInput placeholder="Address" style="width:100%" name="street">
+        </md-input-container>
+      </p>
+
+      <p>        
+        <md-input-container>
+            <input mdInput placeholder="City" name="city">
+        </md-input-container>
+        <md-input-container>
+            <input mdInput placeholder="Postal Code" name="postalCode">
+        </md-input-container>
       </p>
 
       <p>
-        <md-input placeholder="City" name="city"></md-input>
-        <md-input placeholder="Postal Code" name="postalCode"></md-input>
-      </p>
-
-      <p>
-        <md-input placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone"></md-input>
+        <md-input-container>
+            <input mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
+        </md-input-container>
       </p>
 
       <p>

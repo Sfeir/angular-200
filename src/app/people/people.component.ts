@@ -10,18 +10,11 @@ const BASE_URL = 'http://localhost:9000';
 })
 export class PeopleComponent implements OnInit {
     
-    private people: any[];
-    
+    people: any[];
+    dialogStatus = 'inactive';
+
     constructor(private _http: Http) {}    
 
-    /**
-     * Returns private property _dialogStatus
-     *
-     * @returns {string}
-     */
-    get dialogStatus(): string {
-        return this._dialogStatus
-    }
 
     /**
      * OnInit implementation
@@ -36,5 +29,13 @@ export class PeopleComponent implements OnInit {
         this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
             .map(res => res.json())            
             .subscribe( (people: any[]) => this.people = people);
+    }
+
+    showDialog() {
+        this.dialogStatus = 'active';
+    }
+
+    hideDialog() {
+        this.dialogStatus = 'inactive';
     }
 }
