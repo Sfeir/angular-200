@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import 'hammerjs';
 import { MaterialModule } from '@angular/material';
@@ -15,6 +16,7 @@ import { HomeComponent } from './home';
 import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
+import { FormComponent } from './shared/form';
 
 @NgModule({
   imports: [
@@ -23,6 +25,7 @@ import { CardComponent } from './shared/card';
     MaterialModule.forRoot(),
     HttpModule,
     RouterModule,
+    FormsModule,
     APP_ROUTES
   ],
   declarations: [
@@ -30,7 +33,8 @@ import { CardComponent } from './shared/card';
     HomeComponent,
     PersonComponent,
     PeopleComponent,
-    CardComponent
+    CardComponent,
+    FormComponent
   ],
   providers: [ ],
   bootstrap: [
