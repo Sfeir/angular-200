@@ -37,6 +37,6 @@ export class PersonComponent implements OnInit {
      * Returns random people
      */
     random() {
-        this._peopleService.fetchRandom().subscribe((person: any) => this._person = person);
+        this.person = PEOPLE[ (Math.random() * PEOPLE.length) | 0 ];
     }
 }
