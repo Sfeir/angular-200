@@ -15,24 +15,12 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-            <p [class.errors]="firstname.dirty && firstname.invalid">
-
-              <md-input placeholder="First name" [(ngModel)]="model.firstname" minlength="2" required name="firstname" #firstname="ngModel" ></md-input>
-
-              <span *ngIf="firstname.dirty && firstname.errors?.required"><br>First name is required</span>
-              <span *ngIf="firstname.dirty && firstname.errors?.minlength"><br>First name is 2 chars min</span>
-
-            </p>
-
-            <p [class.errors]="lastname.dirty && lastname.invalid">
-
-              <md-input placeholder="Last Name" [(ngModel)]="model.lastname" minlength="2" required name="lastname" #lastname="ngModel"></md-input>
-
-              <span *ngIf="lastname.dirty && lastname.errors?.required"><br>Last name is required</span>
-              <span *ngIf="lastname.dirty && lastname.errors?.minlength"><br>Last name is 2 chars min</span>
-
-            </p>
-
+           <md-input-container>
+              <input ngModel mdInput placeholder="First name *" name="firstname">
+            </md-input-container>
+            <md-input-container>
+              <input ngModel mdInput placeholder="Last Name *" name="lastname">
+            </md-input-container>
           </td>
           <td class="align-right">
             <img width="100" src="{{ model.photo }}"/>
@@ -41,26 +29,32 @@
         </tr>
       </table>
 
-      <p [class.errors]="email.dirty && email.invalid">
-        <md-input placeholder="Email" style="width:100%" [(ngModel)]="model.email" required name="email" type="email" #email="ngModel"></md-input>
+      <p>
+        <md-input-container>
+            <input ngModel mdInput placeholder="Email *" style="width:100%" name="email">
+        </md-input-container>        
+      </p>
 
-        <span *ngIf="email.dirty && email.errors?.required">Email is mandatory</span>
+  
+      <p ngModelGroup="address">
+        <md-input-container>
+            <input ngModel mdInput placeholder="Address" style="width:100%" name="street">
+        </md-input-container>
+      </p>
+
+      <p ngModelGroup="address">
+        <md-input-container>
+            <input ngModel mdInput placeholder="City" name="city">
+        </md-input-container>
+        <md-input-container>
+            <input ngModel mdInput placeholder="Postal Code" name="postalCode">
+        </md-input-container>
       </p>
 
       <p>
-        <md-input placeholder="Address" style="width:100%" [(ngModel)]="model.address.street" name="street"></md-input>
-      </p>
-
-      <p>
-        <md-input placeholder="City" [(ngModel)]="model.address.city" name="city"></md-input>
-        <md-input placeholder="Postal Code" [(ngModel)]="model.address.postalCode" name="postalCode"></md-input>
-      </p>
-
-      <p [class.errors]="phone.dirty && phone.invalid">
-        <md-input placeholder="Phone (ex: 0612345678)" style="width:100%" [(ngModel)]="model.phone" name="phone" pattern="\d{10}" required #phone="ngModel"></md-input>
-
-        <span *ngIf="phone.dirty && phone.errors?.pattern">Phone number must be 10 digits</span>
-        <span *ngIf="phone.dirty && phone.errors?.required">Phone number is mandatory</span>
+        <md-input-container>
+            <input ngModel mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
+        </md-input-container>
       </p>
 
       <p>
