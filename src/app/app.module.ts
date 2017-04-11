@@ -1,6 +1,8 @@
 // CORE DEPS
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 // MATERIAL DESIGN MODULES
 import 'hammerjs';
 import { MaterialModule } from '@angular/material';
@@ -12,6 +14,7 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
+import { CardComponent } from './shared/card';
 
 @NgModule({
   imports: [
@@ -26,7 +29,8 @@ import { PeopleComponent } from './people';
     PeopleAppComponent,
     HomeComponent,
     PersonComponent,
-    PeopleComponent
+    PeopleComponent,
+    CardComponent
   ],
   providers: [ ],
   bootstrap: [
