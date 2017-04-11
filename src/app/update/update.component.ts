@@ -1,71 +1,47 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import 'rxjs/add/operator/mergeMap';
-import { PeopleService } from "../shared/index";
+import { Observable } from "rxjs";
+
+const BASE_URL = 'http://localhost:9000';
 
 @Component({
   selector: 'sfeir-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
-export class UpdateComponent implements OnInit {
-  // private property to store person value
-  private _person: any;
+export class UpdateComponent implements OnInit {    
+    person: any;
+    
 
-  /**
-   * Component constructor
-   */
-  constructor(private _route: ActivatedRoute, private _router: Router, private _peopleService: PeopleService) {
-    this._person = {
-      id: '',
-      firstname: '',
-      lastname: '',
-      email: '',
-      address: {
-        street: '',
-        city: '',
-        postalCode: ''
-      },
-      phone: '',
-      isManager: false
-    };
-  }
+    /**
+     * Component constructor
+     */
+    constructor(private _route: ActivatedRoute, private _router: Router, private _http: Http) {        
+        this.person = {
+            address: {}
+        };
+    }
 
-  /**
-   * Returns private property _person
-   *
-   * @returns {any}
-   */
-  get person(): any {
-    return this._person;
-  }
+   
+    /**
+     * OnInit implementation
+     */
+    ngOnInit() {
+        this._route.params
+            .map((params: any) => params.id)
+            .flatMap((id: string) => this._http.get(`${BASE_URL}/api/peoples/${id}`))
+            .map(res => res.json())            
+            .subscribe( (person: any) => this.person = person);
+    }
 
-  /**
-   * OnInit implementation
-   */
-  ngOnInit() {
+    submit(person: any) {
+        this._http.put(`${BASE_URL}/api/peoples/${person.id}`,person)
+            .subscribe( () => this._router.navigate(['/people']) );
+    }
 
-    console.log(this._route.params);
+    cancel() {
+        this._router.navigate(['/people']);
+    }
 
-    this._route.params
-        .map((params: any) => params.id)
-        .flatMap((id: string) => this._peopleService.fetchOne(id))
-        .subscribe((person: any) => this._person = person);
-  }
-
-  /**
-   * Function to update person and redirect to people list
-   *
-   * @param person
-   */
-  submit(person: any) {
-    this._peopleService.update(person).subscribe(_ => this._router.navigate(['/people']));
-  }
-
-  /**
-   * Function to cancel process and redirect to people list
-   */
-  cancel() {
-    this._router.navigate(['/people']);
-  }
 }
