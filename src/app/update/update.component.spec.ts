@@ -10,6 +10,7 @@ import { DebugElement } from '@angular/core';
 import { UpdateComponent } from './update.component';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
 const expectedResponse = {
   id: '123',

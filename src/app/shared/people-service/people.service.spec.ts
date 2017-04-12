@@ -6,6 +6,7 @@ import { MockBackend } from '@angular/http/testing';
 import { TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
 import { PeopleService } from './people.service';
 import { Http, XHRBackend, Response, ResponseOptions } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 // @todo(wassim): there is a weird behavior with mock responses
 // they return Promises instead of the actual "expectedResponse" object.
@@ -86,19 +87,7 @@ describe('PeopleService', () => {
 
       // todo
 
-    }));
-
-    it('should fetch empty object when status !== 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(
-          new ResponseOptions(responseOptions(expectedResponse[1], 404))
-        ));
-      });
-
-      // todo
-
-    }));
+    }));    
   });
 
   describe('fetchOne()', () => {
@@ -114,18 +103,7 @@ describe('PeopleService', () => {
       // todo
 
     }));
-
-    it('should fetch empty object when status !== 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-
-      mockbackend.connections.subscribe(connection => {
-        connection.mockRespond(new Response(
-          new ResponseOptions(responseOptions(expectedResponse[1], 404))
-        ));
-      });
-
-      // todo
-
-    }));
+    
 
   });
 
@@ -145,22 +123,7 @@ describe('PeopleService', () => {
       // todo
 
     }));
-
-    it('should not delete person with id=456 when status !== 200', inject([PeopleService, XHRBackend], (service, mockbackend) => {
-
-      mockbackend.connections.subscribe(connection => {
-        const _expectedResponse = Array.from(expectedResponse);
-        _expectedResponse.splice(1, 1); // remove entry=1
-
-        connection.mockRespond(new Response(
-          new ResponseOptions(responseOptions(_expectedResponse, 404))
-        ));
-      });
-
-      // todo
-
-    }));
-
+    
   });
 
   describe('update()', () => {

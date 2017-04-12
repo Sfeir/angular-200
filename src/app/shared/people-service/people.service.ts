@@ -21,12 +21,19 @@ export class PeopleService {
         // build all backend urls
         Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
     }
-
+   
     fetch(): Observable<any[]> {
-        return this._http.get(this._backendURL.allPeople)
-            .map(res => res.json());
+        return this._http.get(this._backendURL.allPeople, this._options())
+            .map((res: Response) => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+                else {
+                    return [];
+                }
+            });
     }
-    
+
     fetchRandom(): Observable<any> {
         return this._http.get(this._backendURL.randomPeople)
             .map(res => res.json());
