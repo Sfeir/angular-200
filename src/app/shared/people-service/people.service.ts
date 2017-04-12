@@ -5,10 +5,10 @@ import { environment } from "../../../environments/environment";
 
 @Injectable()
 export class PeopleService {
-    
+
     private _backendURL: any;
 
-    
+
     constructor(private _http: Http) {
         this._backendURL = {};
 
@@ -23,10 +23,17 @@ export class PeopleService {
     }
 
     fetch(): Observable<any[]> {
-        return this._http.get(this._backendURL.allPeople)
-            .map(res => res.json());
+        return this._http.get(this._backendURL.allPeople, this._options())
+            .map((res: Response) => {
+                if (res.status === 200) {
+                    return res.json();
+                }
+                else {
+                    return [];
+                }
+            });
     }
-    
+
     fetchRandom(): Observable<any> {
         return this._http.get(this._backendURL.randomPeople)
             .map(res => res.json());
@@ -53,7 +60,7 @@ export class PeopleService {
     }
 
     private _options(headerList: Object = {}): RequestOptions {
-        const headers = new Headers(Object.assign({'Content-Type': 'application/json'}, headerList));
-        return new RequestOptions({headers: headers});
+        const headers = new Headers(Object.assign({ 'Content-Type': 'application/json' }, headerList));
+        return new RequestOptions({ headers: headers });
     }
 }
