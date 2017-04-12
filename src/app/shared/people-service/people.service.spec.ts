@@ -5,7 +5,7 @@ import { MockBackend } from '@angular/http/testing';
 
 import { TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
 import { PeopleService } from './people.service';
-import { Http, XHRBackend, Response, ResponseOptions } from "@angular/http";
+import { Http, XHRBackend, Response, ResponseOptions } from '@angular/http';
 
 // @todo(wassim): there is a weird behavior with mock responses
 // they return Promises instead of the actual "expectedResponse" object.

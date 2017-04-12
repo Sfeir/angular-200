@@ -8,8 +8,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { UpdateComponent } from './update.component';
-import { BehaviorSubject } from "rxjs/BehaviorSubject";
-import { Observable } from "rxjs/Observable";
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Observable } from 'rxjs/Observable';
 
 const expectedResponse = {
   id: '123',
