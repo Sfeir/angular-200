@@ -15,7 +15,7 @@ import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
-import { CardComponent, FormComponent, PeopleService, NaPipe } from "./shared";
+import { CardComponent, FormComponent, PeopleService, NaPipe, SfeirBadgeDirective } from "./shared";
 import { UpdateComponent } from './update';
 
 @NgModule({
@@ -36,7 +36,8 @@ import { UpdateComponent } from './update';
     CardComponent,
     FormComponent,
     UpdateComponent,
-    NaPipe
+    NaPipe,
+    SfeirBadgeDirective
   ],
   providers: [
     PeopleService
