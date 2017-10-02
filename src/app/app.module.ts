@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import {
   MdToolbarModule,
@@ -45,7 +45,7 @@ import { UpdateComponent } from './update/update.component';
     MdDialogModule,
     HttpClientModule,
     APP_ROUTES,
-    FormsModule
+    ReactiveFormsModule
   ],
   declarations: [
     PeopleAppComponent,
