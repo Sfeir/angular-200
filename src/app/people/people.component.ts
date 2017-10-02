@@ -15,6 +15,7 @@ export class PeopleComponent implements OnInit {
     private addDialog: MdDialogRef<AddDialogComponent>;
     people;
     dialogStatus = 'inactive';
+    view = 'card';
 
     constructor(private _peopleService: PeopleService, public dialog: MdDialog) {}
 
@@ -59,6 +60,10 @@ export class PeopleComponent implements OnInit {
     hideDialog() {
         this.dialogStatus = 'inactive';
         this.addDialog.close();
+    }
+
+    switchView() {
+        this.view = (this.view === 'card') ? 'list' : 'card';
     }
 }
 
