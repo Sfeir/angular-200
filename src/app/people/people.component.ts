@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { AddDialogComponent } from './add-dialog/add-dialog.component';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -10,9 +12,12 @@ const BASE_URL = 'http://localhost:9000';
 })
 export class PeopleComponent implements OnInit {
 
-    private people;
+    private addDialog: MdDialogRef<AddDialogComponent>;
+    people;
+    dialogStatus = 'inactive';
+    
 
-    constructor(private _http: HttpClient) {}
+    constructor(private _http: HttpClient, public dialog: MdDialog) {}
 
 
     /**
@@ -30,9 +35,19 @@ export class PeopleComponent implements OnInit {
 
     showDialog() {
         this.dialogStatus = 'active';
+        this.addDialog = this.dialog.open(AddDialogComponent, {
+            width: '450px',
+            data: {}
+          });
+
+          this.addDialog.afterClosed().subscribe(result => {
+            this.dialogStatus = 'inactive';
+            console.log('The dialog was closed');
+          });
     }
 
     hideDialog() {
         this.dialogStatus = 'inactive';
+        this.addDialog.close();
     }
 }

@@ -12,7 +12,8 @@ import {
   MdCheckboxModule,
   MdRadioModule,
   MdIconModule,
-  MdListModule
+  MdListModule,
+  MdDialogModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -23,6 +24,7 @@ import { HomeComponent } from './home';
 import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
+import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 
 @NgModule({
   imports: [
@@ -37,6 +39,7 @@ import { CardComponent } from './shared/card';
     MdRadioModule,
     MdIconModule,
     MdListModule,
+    MdDialogModule,
     HttpClientModule,
     APP_ROUTES
   ],
@@ -45,8 +48,10 @@ import { CardComponent } from './shared/card';
     HomeComponent,
     PersonComponent,
     PeopleComponent,
-    CardComponent
+    CardComponent,
+    AddDialogComponent
   ],
+  entryComponents: [AddDialogComponent],
   providers: [ ],
   bootstrap: [
     PeopleAppComponent
