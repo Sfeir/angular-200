@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -9,17 +9,16 @@ const BASE_URL = 'http://localhost:9000';
     styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-    
-    private people: any[];
-    
-    constructor(private _http: Http) {}    
+
+    private people;
+
+    constructor(private _http: HttpClient) {}
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
         this._http.get(`${BASE_URL}/api/peoples/`)
-            .map(res => res.json())            
-            .subscribe( (people: any[]) => this.people = people);
+            .subscribe( (people) => this.people = people);
     }
 }
