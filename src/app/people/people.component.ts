@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import 'rxjs/add/operator/mergeMap';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -16,7 +17,6 @@ export class PeopleComponent implements OnInit {
     private addDialog: MdDialogRef<AddDialogComponent>;
     people;
     dialogStatus = 'inactive';
-    
 
     constructor(private _http: HttpClient, public dialog: MdDialog) {}
 
@@ -34,10 +34,9 @@ export class PeopleComponent implements OnInit {
             .subscribe( (people) => this.people = people);
     }
 
-    add(person: any) {        
-        this._http.post(`${BASE_URL}/api/peoples/`,person)
-            .flatMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
-            .map(res => res.json())            
+    add(person: any) {
+        this._http.post(`${BASE_URL}/api/peoples/`, person)
+            .mergeMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
             .subscribe( (people: any[]) => {
                 this.people = people;
                 this.hideDialog();
@@ -51,9 +50,11 @@ export class PeopleComponent implements OnInit {
             data: {}
           });
 
-          this.addDialog.afterClosed().subscribe(result => {
+          this.addDialog.afterClosed().subscribe(person => {
             this.dialogStatus = 'inactive';
-            console.log('The dialog was closed');
+            if (person) {
+                this.add(person);
+            }
           });
     }
 
