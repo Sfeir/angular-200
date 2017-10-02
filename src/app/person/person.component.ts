@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -11,15 +12,16 @@ const BASE_URL = 'http://localhost:9000';
 export class PersonComponent implements OnInit {
     private person: any = {};
 
-    constructor(private _http: Http) {}
+    constructor(private _http: HttpClient) {
+        
+    }
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
         this._http.get(`${BASE_URL}/api/peoples/`)
-            .map(res => res.json())
-            .subscribe(person => this.person = person[0]);
+            .subscribe(people => this.person = people[0]);
     }
 
     /**
@@ -27,7 +29,6 @@ export class PersonComponent implements OnInit {
      */
     random() {
         this._http.get(`${BASE_URL}/api/peoples/random`)
-            .map(res => res.json())
             .subscribe(person => this.person = person);
     }
 }
