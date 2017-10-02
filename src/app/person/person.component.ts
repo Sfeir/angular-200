@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PeopleService } from "../shared";
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
+const BASE_URL = 'http://localhost:9000';
 
 @Component({
     selector: 'sfeir-person',
@@ -9,21 +12,23 @@ import { PeopleService } from "../shared";
 export class PersonComponent implements OnInit {
     private person: any = {};
 
-    constructor(private _peopleService: PeopleService) {}
+    constructor(private _http: HttpClient) {
+        
+    }
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
-        this._peopleService.fetch()
-            .subscribe(person => this.person = person[0]);
+        this._http.get(`${BASE_URL}/api/peoples/`)
+            .subscribe(people => this.person = people[0]);
     }
 
     /**
      * Returns random people
      */
     random() {
-        this._peopleService.fetchRandom()
+        this._http.get(`${BASE_URL}/api/peoples/random`)
             .subscribe(person => this.person = person);
     }
 }
