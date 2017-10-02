@@ -28,6 +28,7 @@ import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
+import { PeopleService } from './shared/people-service';
 
 @NgModule({
   imports: [
@@ -58,7 +59,9 @@ import { UpdateComponent } from './update/update.component';
     UpdateComponent
   ],
   entryComponents: [AddDialogComponent],
-  providers: [ ],
+  providers: [
+    PeopleService
+  ],
   bootstrap: [
     PeopleAppComponent
   ]
