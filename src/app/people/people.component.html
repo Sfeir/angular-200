@@ -2,6 +2,18 @@
     <sfeir-card *ngFor="let person of people" [person]="person" (personDelete)="delete($event)"></sfeir-card>
 </section>
 
+<section>
+  <md-list>
+    <md-list-item (click)="navigate(person)" *ngFor="let person of people" class="md-whiteframe-2dp md-card">
+      <img md-list-avatar src="{{ person.photo }}">
+      <h3 md-line> {{person.firstname}} {{person.lastname}} </h3>
+      <p md-line>
+        <span> {{person.entity}} </span>
+        — <span>{{person.email}} </span>
+      </p>
+    </md-list-item>
+  </md-list>
+</section>
 
 <section class="dialog-modal" [ngClass]="{ 'active': dialogStatus == 'active' }">
   <sfeir-form (submit)="add($event)" (cancel)="hideDialog()"></sfeir-form>
