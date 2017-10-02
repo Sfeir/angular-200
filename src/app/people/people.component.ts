@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/mergeMap';
+import { HttpClient } from '@angular/common/http';
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -11,11 +10,10 @@ const BASE_URL = 'http://localhost:9000';
     styleUrls: ['people.component.css']
 })
 export class PeopleComponent implements OnInit {
-    
-    people: any[];
-    dialogStatus = 'inactive';
 
-    constructor(private _http: Http) {}    
+    private people;
+
+    constructor(private _http: HttpClient) {}
 
 
     /**
@@ -23,8 +21,7 @@ export class PeopleComponent implements OnInit {
      */
     ngOnInit() {
         this._http.get(`${BASE_URL}/api/peoples/`)
-            .map(res => res.json())            
-            .subscribe( (people: any[]) => this.people = people);
+            .subscribe( (people) => this.people = people);
     }
 
     delete(person: any) {
