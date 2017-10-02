@@ -39,7 +39,8 @@ import { UpdateComponent } from './update';
     MdRadioModule,
     MdIconModule,
     MdListModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
