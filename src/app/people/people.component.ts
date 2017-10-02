@@ -1,9 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-import { Router } from "@angular/router";
-import 'rxjs/add/operator/mergeMap';
-import { PeopleService } from "../shared";
+import { HttpClient } from '@angular/common/http';
+
+const BASE_URL = 'http://localhost:9000';
 
 @Component({
     selector: 'sfeir-people',
@@ -11,24 +10,17 @@ import { PeopleService } from "../shared";
     styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
-    
-    people: any[];
-    dialogStatus = 'inactive';
-    view = 'card';
 
-    constructor(private _peopleService: PeopleService, private _router:Router) {}
+    private people;
+
+    constructor(private _http: HttpClient) {}
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
-        this._peopleService.fetch()
-            .subscribe( (people: any[]) => this.people = people);
-    }
-
-    delete(person: any) {
-        this._peopleService.delete(person.id)            
-            .subscribe( (people: any[]) => this.people = people);
+        this._http.get(`${BASE_URL}/api/peoples/`)
+            .subscribe( (people) => this.people = people);
     }
 
     add(person: any) {        
