@@ -29,6 +29,7 @@ import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
 import { PeopleService } from './shared/people-service';
+import { NaPipe } from './shared/na-pipe';
 
 @NgModule({
   imports: [
@@ -56,7 +57,8 @@ import { PeopleService } from './shared/people-service';
     CardComponent,
     AddDialogComponent,
     FormComponent,
-    UpdateComponent
+    UpdateComponent,
+    NaPipe
   ],
   entryComponents: [AddDialogComponent],
   providers: [
