@@ -1,0 +1,42 @@
+md-form-field ,
+label {
+    max-width: 500px;
+    width: 95%;
+}
+
+label {
+    margin: auto;
+    display: block;
+}
+
+.search-input {
+    display: flex;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+md-icon {
+    color: #337ab7;
+    font-size: 40px;
+    margin: 5px 13px;
+}
+
+md-form-field {
+    color: #337ab7;
+    background-color: transparent;
+    font-size: 20px;
+    height: 56px;
+    outline: none;
+    padding: 2px 4px;
+}
+
+.md-input-placeholder.md-focused {
+}
+
+.mat-form-field-underline {
+    background-color: white;
+}
+
+.mat-form-field-underline .md-input-ripple {
+    background-color: white;
+}
