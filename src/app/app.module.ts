@@ -30,6 +30,7 @@ import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
 import { PeopleService } from './shared/people-service';
 import { NaPipe } from './shared/na-pipe';
+import { SfeirBadgeDirective } from './shared/badge';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import { NaPipe } from './shared/na-pipe';
     AddDialogComponent,
     FormComponent,
     UpdateComponent,
-    NaPipe
+    NaPipe,
+    SfeirBadgeDirective
   ],
   entryComponents: [AddDialogComponent],
   providers: [
