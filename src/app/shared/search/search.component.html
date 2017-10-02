@@ -1,0 +1,13 @@
+<section class="search-input">
+  <md-icon>search</md-icon>  
+  <md-form-field  autocomplete="off" color="light">
+      <input mdInput #mdInputRef autocomplete="off" 
+      (input)="search(mdInputRef.value)" 
+      (keyup.enter)="onSelect()" 
+      (keydown.ArrowUp)="prev()" 
+      (keydown.ArrowDown)="next()" 
+      (keydown.ArrowLeft)="prev()" 
+      (keydown.ArrowRight)="next()"
+      [value]="initValue | uppercase">
+  </md-form-field>
+</section>

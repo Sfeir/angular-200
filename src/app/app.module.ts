@@ -17,6 +17,7 @@ import {
   MdDialogModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
 
 import { APP_ROUTES } from './app.routes';
 
@@ -30,7 +31,9 @@ import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
 import { PeopleService } from './shared/people-service';
 import { NaPipe } from './shared/na-pipe';
+import { SearchComponent } from './shared/search/search.component';
 import { SfeirBadgeDirective } from './shared/badge';
+import { reducer } from './store/reducers/people.reducer';
 
 @NgModule({
   imports: [
@@ -48,7 +51,8 @@ import { SfeirBadgeDirective } from './shared/badge';
     MdDialogModule,
     HttpClientModule,
     APP_ROUTES,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(reducer),
   ],
   declarations: [
     PeopleAppComponent,
@@ -60,7 +64,8 @@ import { SfeirBadgeDirective } from './shared/badge';
     FormComponent,
     UpdateComponent,
     NaPipe,
-    SfeirBadgeDirective
+    SfeirBadgeDirective,
+    SearchComponent
   ],
   entryComponents: [AddDialogComponent],
   providers: [
