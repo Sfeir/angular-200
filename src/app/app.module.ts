@@ -38,7 +38,8 @@ import { FormComponent } from './shared/form';
     MdRadioModule,
     MdIconModule,
     MdListModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
