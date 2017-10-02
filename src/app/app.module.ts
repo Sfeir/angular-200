@@ -27,6 +27,7 @@ import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
 import { FormComponent } from './shared/form';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { FormComponent } from './shared/form';
     PeopleComponent,
     CardComponent,
     AddDialogComponent,
-    FormComponent
+    FormComponent,
+    UpdateComponent
   ],
   entryComponents: [AddDialogComponent],
   providers: [ ],
