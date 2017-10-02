@@ -4,8 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 // MATERIAL DESIGN MODULES
-import 'hammerjs';
-import { MaterialModule } from '@angular/material';
+import {
+  MdToolbarModule,
+  MdCardModule,
+  MdTabsModule,
+  MdButtonModule,
+  MdInputModule,
+  MdCheckboxModule,
+  MdRadioModule,
+  MdIconModule,
+  MdListModule
+} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
@@ -20,10 +29,15 @@ import { CardComponent } from './shared/card';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule.forRoot(),
-    HttpModule,
-    RouterModule,
-    APP_ROUTES
+    MdToolbarModule,
+    MdCardModule,
+    MdTabsModule,
+    MdButtonModule,
+    MdInputModule,
+    MdCheckboxModule,
+    MdRadioModule,
+    MdIconModule,
+    MdListModule
   ],
   declarations: [
     PeopleAppComponent,
