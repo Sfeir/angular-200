@@ -1,11 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { PeopleService } from '../shared/people-service';
 import 'rxjs/add/operator/mergeMap';
 
-const BASE_URL = 'http://localhost:9000';
 
 @Component({
     selector: 'sfeir-people',
@@ -18,24 +16,25 @@ export class PeopleComponent implements OnInit {
     people;
     dialogStatus = 'inactive';
 
-    constructor(private _http: HttpClient, public dialog: MdDialog) {}
+    constructor(private _peopleService: PeopleService, public dialog: MdDialog) {}
+
 
     /**
      * OnInit implementation
      */
     ngOnInit() {
-        this._http.get(`${BASE_URL}/api/peoples/`)
+        this._peopleService.fetch()
             .subscribe( (people) => this.people = people);
     }
 
     delete(person: any) {
-        this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
+        this._peopleService.delete(person.id)
             .subscribe( (people) => this.people = people);
     }
 
     add(person: any) {
-        this._http.post(`${BASE_URL}/api/peoples/`, person)
-            .mergeMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
+        this._peopleService.update(person)
+            .mergeMap( res => this._peopleService.fetch())
             .subscribe( (people: any[]) => {
                 this.people = people;
                 this.hideDialog();
@@ -62,3 +61,5 @@ export class PeopleComponent implements OnInit {
         this.addDialog.close();
     }
 }
+
+
