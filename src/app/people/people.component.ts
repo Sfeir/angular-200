@@ -23,21 +23,9 @@ export class PeopleComponent implements OnInit {
             .subscribe( (people) => this.people = people);
     }
 
-    add(person: any) {        
-        this._peopleService.create(person)
-            .flatMap( res => this._peopleService.fetch())            
-            .subscribe( (people: any[]) => {
-                this.people = people;
-                this.hideDialog();
-            });
-    }
-
-    showDialog() {
-        this.dialogStatus = 'active';
-    }
-
-    hideDialog() {
-        this.dialogStatus = 'inactive';
+    delete(person: any) {
+        this._http.delete(`${BASE_URL}/api/peoples/${person.id}`)
+            .subscribe( (people) => this.people = people);
     }
 }
 
