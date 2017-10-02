@@ -1,35 +1,36 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
-import { Observable } from "rxjs";
-import { PeopleService } from "../shared";
+import { Observable } from 'rxjs';
+
+const BASE_URL = 'http://localhost:9000';
 
 @Component({
   selector: 'sfeir-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
-export class UpdateComponent implements OnInit {    
+export class UpdateComponent implements OnInit {
     person: any;
-    
 
     /**
      * Component constructor
      */
-    constructor(private _route: ActivatedRoute, private _router: Router, private _peopleService: PeopleService) {
+    constructor(private _route: ActivatedRoute, private _router: Router, private _http: HttpClient) {
         this.person = {
             address: {}
         };
     }
 
-   
     /**
      * OnInit implementation
      */
     ngOnInit() {
         this._route.params
             .map((params: any) => params.id)
-            .flatMap((id: string) => this._peopleService.fetchOne(id))             
+            .mergeMap((id: string) => this._http.get(`${BASE_URL}/api/peoples/${id}`))
             .subscribe( (person: any) => this.person = person);
     }
 
