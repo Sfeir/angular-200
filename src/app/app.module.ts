@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 // MATERIAL DESIGN MODULES
 import {
   MdToolbarModule,
@@ -25,6 +26,7 @@ import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
+import { FormComponent } from './shared/form';
 
 @NgModule({
   imports: [
@@ -41,7 +43,8 @@ import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
     MdListModule,
     MdDialogModule,
     HttpClientModule,
-    APP_ROUTES
+    APP_ROUTES,
+    FormsModule
   ],
   declarations: [
     PeopleAppComponent,
@@ -49,7 +52,8 @@ import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
     PersonComponent,
     PeopleComponent,
     CardComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    FormComponent
   ],
   entryComponents: [AddDialogComponent],
   providers: [ ],
