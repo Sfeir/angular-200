@@ -37,7 +37,8 @@ import { CardComponent } from './shared/card';
     MdRadioModule,
     MdIconModule,
     MdListModule,
-    HttpClientModule
+    HttpClientModule,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
