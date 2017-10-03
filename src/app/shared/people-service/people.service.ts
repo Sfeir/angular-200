@@ -2,13 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { Store } from '@ngrx/store';
+import { State } from '../../store/reducers/people.reducer';
+import * as PeopleAction from '../../store/actions/people.actions';
+import * as fromPeople from '../../store/reducers/people.reducer';
 
 @Injectable()
 export class PeopleService {
 
     private _backendURL: any;
 
-    constructor(private _http: HttpClient) {
+    constructor(private _http: HttpClient, private store: Store<State>) {
         this._backendURL = {};
 
         // build backend base url
@@ -21,8 +25,20 @@ export class PeopleService {
         Object.keys(environment.backend.endpoints).forEach(k => this._backendURL[k] = `${baseUrl}${environment.backend.endpoints[k]}`);
     }
 
+    getPeople() {
+        return this.store.select(fromPeople.getFilteredPeople);
+    }
+
     fetch(): Observable<any> {
-        return this._http.get(this._backendURL.allPeople);
+        return this._http.get(this._backendURL.allPeople)
+        .map(people => {
+            this.store.dispatch(new PeopleAction.SetPeople(people));
+            return people;
+        });
+    }
+
+    filter(search) {
+        this.store.dispatch(new PeopleAction.FilterPeople(search));
     }
 
     fetchRandom(): Observable<any> {

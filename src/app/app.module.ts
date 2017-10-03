@@ -52,7 +52,7 @@ import { reducer } from './store/reducers/people.reducer';
     HttpClientModule,
     APP_ROUTES,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducer),
+    StoreModule.forRoot({people: reducer}),
   ],
   declarations: [
     PeopleAppComponent,

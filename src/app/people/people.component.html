@@ -1,15 +1,15 @@
-<sfeir-search></sfeir-search>
+<sfeir-search (search)="onSearch($event)" [value]="search | async"></sfeir-search>
 
 <section [ngSwitch]="view">
 
   <section *ngSwitchCase="'card'">
-    <sfeir-card *ngFor="let person of people" [person]="person" (personDelete)="delete($event)"></sfeir-card>
+    <sfeir-card *ngFor="let person of people | async" [person]="person" (personDelete)="delete($event)"></sfeir-card>
   </section>
 
 
   <section *ngSwitchCase="'list'">
     <md-list>
-      <md-list-item (click)="navigate(person)" *ngFor="let person of people" class="md-whiteframe-2dp md-card">
+      <md-list-item (click)="navigate(person)" *ngFor="let person of people | async" class="md-whiteframe-2dp md-card">
         <img md-list-avatar src="{{ person.photo }}">
         <h3 md-line> {{person.firstname}} {{person.lastname}}
           <span sfeir-badge [person]="person"></span>
