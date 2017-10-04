@@ -21,7 +21,7 @@ const filterPerson = (search) => (p) => {
 
 
 const filterPeople = (searchFilter: string, people) => {
-  return people.filter(filterPerson(searchFilter));
+    return people.filter(filterPerson(searchFilter));
 };
 
 
@@ -43,26 +43,11 @@ export function reducer(state: State = initialState, action: PeopleAction.Action
 // SELECTORS
 
 
-export const getPeopleState = createFeatureSelector<State>('people');
+export const getFilteredPeople = (state: State) => {
+    return filterPeople(state.search, state.people);
+};
 
-export const getPeople = createSelector(
-    getPeopleState,
-    (state: State) => {
-        return state.people;
-    }
-);
-
-export const getFilteredPeople = createSelector(
-    getPeopleState,
-    (state: State) => {
-        return filterPeople(state.search, state.people);
-    }
-);
-
-export const getSearch = createSelector(
-    getPeopleState,
-    (state: State) => {
-        return state.search;
-    }
-);
+export const getSearch = (state: State) => {
+    return state.search;
+};
 

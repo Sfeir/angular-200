@@ -3,16 +3,15 @@ import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Store } from '@ngrx/store';
-import { State } from '../../store/reducers/people.reducer';
 import * as PeopleAction from '../../store/actions/people.actions';
-import * as fromPeople from '../../store/reducers/people.reducer';
+import * as fromRoot from '../../store/reducers';
 
 @Injectable()
 export class PeopleService {
 
     private _backendURL: any;
 
-    constructor(private _http: HttpClient, private store: Store<State>) {
+    constructor(private _http: HttpClient, private store: Store<fromRoot.State>) {
         this._backendURL = {};
 
         // build backend base url
@@ -26,7 +25,7 @@ export class PeopleService {
     }
 
     getPeople() {
-        return this.store.select(fromPeople.getFilteredPeople);
+        return this.store.select(fromRoot.getFilteredPeople);
     }
 
     fetch(): Observable<any> {

@@ -3,7 +3,7 @@ import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import { PeopleService } from '../shared/people-service';
 import { Store } from '@ngrx/store';
-import * as fromRoot from '../store/reducers/people.reducer';
+import * as fromRoot from '../store/reducers';
 import * as PeopleAction from '../store/actions/people.actions';
 import 'rxjs/add/operator/mergeMap';
 
