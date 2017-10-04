@@ -33,7 +33,7 @@ import { PeopleService } from './shared/people-service';
 import { NaPipe } from './shared/na-pipe';
 import { SearchComponent } from './shared/search/search.component';
 import { SfeirBadgeDirective } from './shared/badge';
-import { reducer } from './store/reducers/people.reducer';
+import { reducers, metaReducers } from './store/reducers';
 
 @NgModule({
   imports: [
@@ -52,7 +52,7 @@ import { reducer } from './store/reducers/people.reducer';
     HttpClientModule,
     APP_ROUTES,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducer),
+    StoreModule.forRoot(reducers, {metaReducers}),
   ],
   declarations: [
     PeopleAppComponent,

@@ -35,3 +35,10 @@ export const metaReducers: MetaReducer<any>[] = !environment.production
  * People Reducers
  */
 
+export const getPeopleState = (state: State) => state.people;
+
+
+export const getSearch = createSelector(
+    getPeopleState,
+    fromPeople.getSearch
+);

@@ -21,19 +21,7 @@ export function reducer(state: State = initialState, action: PeopleAction.Action
 
 // SELECTORS
 
+export const getSearch = (state: State) => {
+    return state.search;
+};
 
-export const getPeopleState = createFeatureSelector<State>('people');
-
-export const getPeople = createSelector(
-    getPeopleState,
-    (state: State) => {
-        return state.people;
-    }
-);
-
-export const getSearch = createSelector(
-    getPeopleState,
-    (state: State) => {
-        return state.search;
-    }
-);
