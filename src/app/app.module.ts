@@ -34,6 +34,7 @@ import { NaPipe } from './shared/na-pipe';
 import { SearchComponent } from './shared/search/search.component';
 import { SfeirBadgeDirective } from './shared/badge';
 import { reducer } from './store/reducers/people.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   imports: [
@@ -53,6 +54,9 @@ import { reducer } from './store/reducers/people.reducer';
     APP_ROUTES,
     ReactiveFormsModule,
     StoreModule.forRoot({people: reducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    })
   ],
   declarations: [
     PeopleAppComponent,
