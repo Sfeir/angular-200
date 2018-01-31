@@ -3,6 +3,8 @@ import { HttpModule } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 /* tslint:disable:no-unused-variable */
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { TestBed, async, fakeAsync, inject, tick } from '@angular/core/testing';
 import { PeopleService } from './people.service';
 import { Http, XHRBackend, Response, ResponseOptions } from "@angular/http";
@@ -39,8 +41,9 @@ describe('PeopleService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule],
+      imports: [HttpClientTestingModule],
       providers: [
+        HttpClient,
         PeopleService,
         { provide: XHRBackend, useClass: MockBackend }
       ]
