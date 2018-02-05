@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AddDialogComponent } from './add-dialog.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MdDialogRef, MdDialogModule
+} from '@angular/material';
+
+class MdDialogRefMock {};
 
 describe('AddDialogComponent', () => {
   let component: AddDialogComponent;
@@ -8,9 +12,13 @@ describe('AddDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddDialogComponent ]
-    })
-    .compileComponents();
+      imports: [ MdDialogModule ],
+      declarations: [ AddDialogComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ],
+      providers: [
+        { provide: MdDialogRef, useClass: MdDialogRefMock },
+      ]
+    });
   }));
 
   beforeEach(() => {
