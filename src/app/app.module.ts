@@ -4,15 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 // MATERIAL DESIGN MODULES
 import {
-  MdToolbarModule,
-  MdCardModule,
-  MdTabsModule,
-  MdButtonModule,
-  MdInputModule,
-  MdCheckboxModule,
-  MdRadioModule,
-  MdIconModule,
-  MdListModule
+  MatToolbarModule,
+  MatCardModule,
+  MatTabsModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatRadioModule,
+  MatIconModule,
+  MatListModule
 } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -28,17 +28,15 @@ import { CardComponent } from './shared/card';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdCardModule,
-    MdTabsModule,
-    MdButtonModule,
-    MdInputModule,
-    MdCheckboxModule,
-    MdRadioModule,
-    MdIconModule,
-    MdListModule,
-    HttpClientModule,
-    APP_ROUTES
+    MatToolbarModule,
+    MatCardModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatIconModule,
+    MatListModule
   ],
   declarations: [
     PeopleAppComponent,
