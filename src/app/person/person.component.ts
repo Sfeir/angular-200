@@ -7,7 +7,7 @@ import { PEOPLE } from '../_static/people';
     styleUrls: ['person.component.css']
 })
 export class PersonComponent implements OnInit {    
-    private person: any;
+    public person: any;
     
     constructor() {
         this.person = PEOPLE[0];
