@@ -10,12 +10,12 @@
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-           <mat-input-container>
-              <input ngModel mdInput placeholder="First name *" name="firstname">
-            </mat-input-container>
-            <mat-input-container>
-              <input ngModel mdInput placeholder="Last Name *" name="lastname">
-            </mat-input-container>
+           <mat-form-field>
+              <input ngModel matInput placeholder="First name *" name="firstname">
+            </mat-form-field>
+            <mat-form-field>
+              <input ngModel matInput placeholder="Last Name *" name="lastname">
+            </mat-form-field>
           </td>
           <td class="align-right">
             <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg"/>
@@ -25,31 +25,31 @@
       </table>
 
       <p>
-        <mat-input-container>
-            <input ngModel mdInput placeholder="Email *" style="width:100%" name="email">
-        </mat-input-container>        
+        <mat-form-field>
+            <input ngModel matInput placeholder="Email *" style="width:100%" name="email">
+        </mat-form-field>        
       </p>
 
   
       <p ngModelGroup="address">
-        <mat-input-container>
-            <input ngModel mdInput placeholder="Address" style="width:100%" name="street">
-        </mat-input-container>
+        <mat-form-field>
+            <input ngModel matInput placeholder="Address" style="width:100%" name="street">
+        </mat-form-field>
       </p>
 
       <p ngModelGroup="address">
-        <mat-input-container>
-            <input ngModel mdInput placeholder="City" name="city">
-        </mat-input-container>
-        <mat-input-container>
-            <input ngModel mdInput placeholder="Postal Code" name="postalCode">
-        </mat-input-container>
+        <mat-form-field>
+            <input ngModel matInput placeholder="City" name="city">
+        </mat-form-field>
+        <mat-form-field>
+            <input ngModel matInput placeholder="Postal Code" name="postalCode">
+        </mat-form-field>
       </p>
 
       <p>
-        <mat-input-container>
-            <input ngModel mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
-        </mat-input-container>
+        <mat-form-field>
+            <input ngModel matInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
+        </mat-form-field>
       </p>
 
       <p>
