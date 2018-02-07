@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { MdDialogRef } from '@angular/material';
 })
 export class AddDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MdDialogRef<AddDialogComponent>) { }
+  constructor(public dialogRef: MatDialogRef<AddDialogComponent>) { }
 
   closeDialog(result = null) {
     this.dialogRef.close(result);
