@@ -1,21 +1,21 @@
-<md-card class="md-whiteframe-2dp">
+<mat-card class="mat-whiteframe-2dp">
 
-  <md-card-title>
+  <mat-card-title>
     <span>Create new person</span>
-  </md-card-title>
+  </mat-card-title>
 
-  <md-card-content>
+  <mat-card-content>
     <form #f="ngForm">
 
       <table style="width: 100%" cellspacing="0">
         <tr>
           <td>
-           <md-input-container>
+           <mat-input-container>
               <input ngModel mdInput placeholder="First name *" name="firstname">
-            </md-input-container>
-            <md-input-container>
+            </mat-input-container>
+            <mat-input-container>
               <input ngModel mdInput placeholder="Last Name *" name="lastname">
-            </md-input-container>
+            </mat-input-container>
           </td>
           <td class="align-right">
             <img width="100" src="https://randomuser.me/api/portraits/lego/6.jpg"/>
@@ -25,44 +25,44 @@
       </table>
 
       <p>
-        <md-input-container>
+        <mat-input-container>
             <input ngModel mdInput placeholder="Email *" style="width:100%" name="email">
-        </md-input-container>        
+        </mat-input-container>        
       </p>
 
   
       <p ngModelGroup="address">
-        <md-input-container>
+        <mat-input-container>
             <input ngModel mdInput placeholder="Address" style="width:100%" name="street">
-        </md-input-container>
+        </mat-input-container>
       </p>
 
       <p ngModelGroup="address">
-        <md-input-container>
+        <mat-input-container>
             <input ngModel mdInput placeholder="City" name="city">
-        </md-input-container>
-        <md-input-container>
+        </mat-input-container>
+        <mat-input-container>
             <input ngModel mdInput placeholder="Postal Code" name="postalCode">
-        </md-input-container>
+        </mat-input-container>
       </p>
 
       <p>
-        <md-input-container>
+        <mat-input-container>
             <input ngModel mdInput placeholder="Phone * (ex: 0612345678)" style="width:100%" name="phone">
-        </md-input-container>
+        </mat-input-container>
       </p>
 
       <p>
-        <md-checkbox>Manager</md-checkbox>
+        <mat-checkbox>Manager</mat-checkbox>
       </p>
 
     </form>
-  </md-card-content>
+  </mat-card-content>
 
 
-  <md-card-actions align="end">
-    <button md-button type="button" (click)="cancel()">Cancel</button>
-    <button md-button color="primary" type="submit" (click)="add(f.value)">Save</button>
-  </md-card-actions>
+  <mat-card-actions align="end">
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+    <button mat-button color="primary" type="submit" (click)="add(f.value)">Save</button>
+  </mat-card-actions>
 
-</md-card>
+</mat-card>

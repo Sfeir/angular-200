@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
 import 'rxjs/add/operator/mergeMap';
 
@@ -14,11 +14,11 @@ const BASE_URL = 'http://localhost:9000';
 })
 export class PeopleComponent implements OnInit {
 
-    private addDialog: MdDialogRef<AddDialogComponent>;
+    private addDialog: MatDialogRef<AddDialogComponent>;
     people;
     dialogStatus = 'inactive';
 
-    constructor(private _http: HttpClient, public dialog: MdDialog) {}
+    constructor(private _http: HttpClient, public dialog: MatDialog) {}
 
 
     /**
