@@ -10,53 +10,53 @@ section {
 }
 
 @media (min-width: 768px) {
-  :host(.wide) md-card,
-  :host(.wide) md-list-item{
+  :host(.wide) mat-card,
+  :host(.wide) mat-list-item{
     width: 600px;
   }
 }
 
-md-card,
-md-list-item {
+mat-card,
+mat-list-item {
   color: rgba(0,0,0,0.87);
   background-color: white;
   margin: 10px;
   width: 360px;
 }
 
-md-card:hover {
+mat-card:hover {
   box-shadow: 0 11px 15px -7px rgba(0,0,0,.2),
   0 24px 38px 3px rgba(0,0,0,.14),
   0 9px 46px 8px rgba(0,0,0,.12);
 }
 
-md-list-item {
+mat-list-item {
   height: 22px;
   padding: 0;
   margin-left: -12px;
   font-size: 14px;
 }
 
-md-card-title {
+mat-card-title {
   margin-bottom: 0;
 }
 
-md-card-title span {
+mat-card-title span {
   font-size: 24px;
   font-weight: 400;
   line-height: 32px;
 }
 
-md-card-subtitle.contact-info {
+mat-card-subtitle.contact-info {
   margin-top: -7px;
   height: 20px;
 }
 
-md-card-title-group {
+mat-card-title-group {
   margin-bottom: 20px;
 }
 
-.contact-info md-icon + a {
+.contact-info mat-icon + a {
   top: -8px;
   position: relative;
   height: 18px;
@@ -77,13 +77,13 @@ md-card-title-group {
   }
 }
 
-.buttons-info [md-button] {
+.buttons-info [mat-button] {
   min-width: 0px;
   padding: 2px;
   height: 40px;
 }
 
-md-icon {
+mat-icon {
   color: rgba(0,0,0,0.54);
   margin: 4px;
 }
@@ -93,7 +93,7 @@ a {
   text-decoration: none;
 }
 
-md-card-actions button[md-raised-button] {
+mat-card-actions button[mat-raised-button] {
   margin: 5px;
 }
 
@@ -127,7 +127,7 @@ a.truncate {
   }
 }
 
-.md-whiteframe-2dp {
+.mat-whiteframe-2dp {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.2),
   0 2px 2px 0 rgba(0,0,0,.14),
   0 3px 1px -2px rgba(0,0,0,.12);
