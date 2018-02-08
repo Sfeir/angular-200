@@ -2,22 +2,43 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // MATERIAL DESIGN MODULES
-import { MaterialModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatCardModule,
+  MatTabsModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatRadioModule,
+  MatIconModule,
+  MatListModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
-// import { PeopleAppComponent } from './app.component';
+
+//import { PeopleAppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    MaterialModule.forRoot()
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatIconModule,
+    MatListModule
   ],
   declarations: [
-    // PeopleAppComponent
+    //PeopleAppComponent
   ],
   providers: [ ],
   bootstrap: [
-    // PeopleAppComponent
+    //PeopleAppComponent
   ]
 })
 export class AppModule { }
