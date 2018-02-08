@@ -6,13 +6,13 @@ import { PEOPLE } from '../_static/people';
     templateUrl: 'person.component.html',
     styleUrls: ['person.component.css']
 })
-export class PersonComponent implements OnInit {    
+export class PersonComponent implements OnInit {
     public person: any;
-    
+
     constructor() {
         this.person = PEOPLE[0];
     }
-    
+
     /**
      * OnInit implementation
      */
