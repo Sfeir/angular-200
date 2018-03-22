@@ -22,7 +22,6 @@ import { APP_ROUTES } from './app.routes';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
-import { PersonComponent } from './person';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
@@ -49,7 +48,6 @@ import { FormComponent } from './shared/form';
   declarations: [
     PeopleAppComponent,
     HomeComponent,
-    PersonComponent,
     PeopleComponent,
     CardComponent,
     AddDialogComponent,
