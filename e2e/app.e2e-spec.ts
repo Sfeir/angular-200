@@ -1,10 +1,10 @@
-import { Angular2200Page } from './app.po';
+import { Angular200Page } from './app.po';
 
-describe('angular2-200 App', function() {
-  let page: Angular2200Page;
+describe('angular-200 App', function() {
+  let page: Angular200Page;
 
   beforeEach(() => {
-    page = new Angular2200Page();
+    page = new Angular200Page();
   });
 
   it('should display message saying app works', () => {
