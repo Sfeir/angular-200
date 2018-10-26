@@ -91,7 +91,7 @@
         }
       }
     },
-    "angular-200-e2e": {
+    "e2e": {
       "root": "e2e",
       "sourceRoot": "e2e",
       "projectType": "application",
