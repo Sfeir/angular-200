@@ -14,6 +14,7 @@ Angular est devenu un acteur incontournable de l'écosystème Front. Développé
   * [Support de formation](https://github.com/Sfeir/angular2-200/blob/step-01/support.pdf)
   * [Installation et lancement](Installation-et-lancement)
   * [Déroulement de la formation](#déroulement-de-la-formation)
+  * [Planning de la formation](Planning-de-la-formation)
   * [Liste des projets](Liste-des-projets)
   * [Stack technique](#stack-technique)
 
@@ -31,7 +32,6 @@ Angular est devenu un acteur incontournable de l'écosystème Front. Développé
   
 
 ## Déroulement de la formation
-
 Un TP :
 
   * un projet par exercice :
@@ -39,7 +39,73 @@ Un TP :
   * un projet par solution :
 `npm run client --project=step01solution`
 
-  
+ 
+## Planning de la formation
+
+### Jour 1
+
+#### Mise en place d'Angular
+* Installation
+* La notion de composant
+* Bootstrap d'une application
+
+#### Le databinding
+* Variable
+* Propriétés
+* Evénements
+
+#### Les components
+* Annotations
+* Classes
+* Communications entre composants
+
+#### Le templating avancé
+* NgFor
+* Gestion des événements DOM
+
+#### Les datas
+* HTTP
+* Observables
+
+#### Le système de routage
+* Mise en place du routeur
+* Configuration
+* Directives
+
+
+### Jour 2
+
+#### Les formulaires et la validation
+* Différents éléments de formulaires
+* Template-driven versus Model-driven
+* Créer ses validators
+
+#### Les services
+* Créer un service
+* Utiliser un service
+
+#### L'injection de dépendances
+* Principe
+* Créer et utiliser des dépendances
+
+#### Les Pipes
+* Les pipes natifs
+* Créer son propre pipe
+
+#### Les directives
+* Les directives natives
+* Créer sa propre directive
+
+#### Initiation aux tests
+* La mise en place
+* Tests unitaires pour un service, un pipe et un component
+
+#### Initiation communication avancée
+* Bus d'événements
+* NGRX / NGXS
+
+
+
 
 ## Liste des projets
 
