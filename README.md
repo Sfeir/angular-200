@@ -1,28 +1,24 @@
 # Angular 200
-by [SFEIR School](https://www.sfeir.com/formation/school/)
 
-Angular est devenu un acteur incontournable de l'écosystème Front. Développé par Google ce framework a su s’imposer pour devenir la référence. Mais l’annonce de la version 2 a boulversé la donne et a donné lieu à des débats “animés”. L’objectif de cette formation est de vous présenter les nouvelles orientations d’Angular 2. Pour cela nous alternons de façon équilibrée les phases d’apprentissage théorique et les exercices pratiques sur un projet réaliste.
-
-
+A [SFEIR School](https://www.sfeir.com/formation/school/)
 
 
 ![logo](https://www.sfeir.com/img/school/formations/Angular%20200.png)
 
 [Calendrier des formations, liste des formateurs et programme de formation](https://www.sfeir.com/formation/school/angular-200/)
 
+
 ## Table des matières
 
-  * [Support de formation](https://github.com/Sfeir/angular2-200/blob/step-01/support.pdf)
   * [Installation et lancement](#Installation-et-lancement)
-  * [Déroulement de la formation](#déroulement-de-la-formation)
   * [Planning de la formation](#Planning-de-la-formation)
   * [Liste des projets](#Liste-des-projets)
   * [Stack technique](#stack-technique)
 
+
 ## Installation et lancement
 
   * `git clone https://github.com/Sfeir/angular-200.git`
-  * `npm install -g @angular/cli` 
   * `cd angular-200`
   * `npm install`
 
@@ -30,17 +26,6 @@ Angular est devenu un acteur incontournable de l'écosystème Front. Développé
   * `npm run server`
 
 
-  
-
-## Déroulement de la formation
-Un TP :
-
-  * un projet par exercice :
-`npm run client step01`
-  * un projet par solution :
-`npm run client step01solution`
-
- 
 ## Planning de la formation
 
 ### Jour 1
@@ -106,8 +91,6 @@ Un TP :
 * NGRX / NGXS
 
 
-
-
 ## Liste des projets
 
   * step01: Création d'un composant manuellement
@@ -136,7 +119,6 @@ Un TP :
   * step24: NGRX
 
 
-
 ## Stack technique
 
 * Angular
@@ -146,11 +128,12 @@ Un TP :
 * NodeJS
 * ExpressJS
 
+
 ## Commandes utiles
 
 Ces commandes doivent être toutes suffixées par le nom du projet : `step01`
 
-  * `ng build` - Compiles an Angular app into an output directory(dist)
-  * `ng test` - Runs unit tests
-  * `ng lint` - Runs linting tools
-  * `ng e2e` - Builds and serves an Angular app, then runs end-to-end tests using Protractor
+  * `npm run ng build` - Compiles an Angular app into an output directory(dist)
+  * `npm run ng test` - Runs unit tests
+  * `npm run ng lint` - Runs linting tools
+  * `npm run ng e2e` - Builds and serves an Angular app, then runs end-to-end tests using Protractor
