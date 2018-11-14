@@ -7,15 +7,16 @@ Angular est devenu un acteur incontournable de l'écosystème Front. Développé
 
 
 ![logo](https://www.sfeir.com/img/school/formations/Angular%20200.png)
+
 [Calendrier des formations, liste des formateurs et programme de formation](https://www.sfeir.com/formation/school/angular-200/)
 
 ## Table des matières
 
   * [Support de formation](https://github.com/Sfeir/angular2-200/blob/step-01/support.pdf)
-  * [Installation et lancement](Installation-et-lancement)
+  * [Installation et lancement](#Installation-et-lancement)
   * [Déroulement de la formation](#déroulement-de-la-formation)
-  * [Planning de la formation](Planning-de-la-formation)
-  * [Liste des projets](Liste-des-projets)
+  * [Planning de la formation](#Planning-de-la-formation)
+  * [Liste des projets](#Liste-des-projets)
   * [Stack technique](#stack-technique)
 
 ## Installation et lancement
@@ -35,9 +36,9 @@ Angular est devenu un acteur incontournable de l'écosystème Front. Développé
 Un TP :
 
   * un projet par exercice :
-`npm run client --project=step01`
+`npm run client step01`
   * un projet par solution :
-`npm run client --project=step01solution`
+`npm run client step01solution`
 
  
 ## Planning de la formation
@@ -57,7 +58,7 @@ Un TP :
 #### Les components
 * Annotations
 * Classes
-* Communications entre composants
+* Communication entre composants
 
 #### Le templating avancé
 * NgFor
@@ -126,9 +127,9 @@ Un TP :
   * step15: Valider le formulaire (Model driven form)
   * step16: Créer un validateur de formulaire
   * step17: Créer un service
-  * step18: Utilisez une Pipe
+  * step18: Utiliser une Pipe
   * step19: Créer une Pipe
-  * step20: Utilisations des directives
+  * step20: Utilisation des directives
   * step21: Créer une directive
   * step22: TDD
   * step23: NGXS
@@ -144,3 +145,12 @@ Un TP :
 * Angular Material
 * NodeJS
 * ExpressJS
+
+## Commandes utiles
+
+Ces commandes doivent être toutes suffixées par le nom du projet : `step01`
+
+  * `ng build` - Compiles an Angular app into an output directory(dist)
+  * `ng test` - Runs unit tests
+  * `ng lint` - Runs linting tools
+  * `ng e2e` - Builds and serves an Angular app, then runs end-to-end tests using Protractor
