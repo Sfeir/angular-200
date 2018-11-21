@@ -11,7 +11,7 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
 ## Table des matières
 
   * [Installation et lancement](#Installation-et-lancement)
-  * [Planning de la formation](#Planning-de-la-formation)
+  * [Déroulement de la formation](#Déroulement-de-la-formation)
   * [Liste des projets](#Liste-des-projets)
   * [Stack technique](#stack-technique)
 
@@ -26,69 +26,15 @@ A [SFEIR School](https://www.sfeir.com/formation/school/)
   * `npm run server`
 
 
-## Planning de la formation
+## Déroulement de la formation
 
-### Jour 1
+  Un TP :
 
-#### Mise en place d'Angular
-* Installation
-* La notion de composant
-* Bootstrap d'une application
+  * un projet par exercice :
+    `npm run client step01`
+   * un projet par solution :
+    `npm run client step01solution`
 
-#### Le databinding
-* Variable
-* Propriétés
-* Evénements
-
-#### Les components
-* Annotations
-* Classes
-* Communication entre composants
-
-#### Le templating avancé
-* NgFor
-* Gestion des événements DOM
-
-#### Les datas
-* HTTP
-* Observables
-
-#### Le système de routage
-* Mise en place du routeur
-* Configuration
-* Directives
-
-
-### Jour 2
-
-#### Les formulaires et la validation
-* Différents éléments de formulaires
-* Template-driven versus Model-driven
-* Créer ses validators
-
-#### Les services
-* Créer un service
-* Utiliser un service
-
-#### L'injection de dépendances
-* Principe
-* Créer et utiliser des dépendances
-
-#### Les Pipes
-* Les pipes natifs
-* Créer son propre pipe
-
-#### Les directives
-* Les directives natives
-* Créer sa propre directive
-
-#### Initiation aux tests
-* La mise en place
-* Tests unitaires pour un service, un pipe et un component
-
-#### Initiation communication avancée
-* Bus d'événements
-* NGRX / NGXS
 
 
 ## Liste des projets
