@@ -1,18 +1,41 @@
 #!/bin/bash
 
 clone="../clone-angular-200"
+app=$1
+root=$(pwd)
 
-ng g app $1 --minimal || exit 1
-step=steps/$1
+copy_step () {
+  name=$1
+  echo "copy step $name"
 
-if [ -d "$step" ] && [ -d $clone/src/app ]; then
+  path=steps/$name
 
-  rm -r $step/src/app && cp -r $clone/src/app $step/src/app
+  ng g app $name --minimal || exit 1
 
-  rm -r $step/src/environments && cp -r $clone/src/environments $step/src/
-  rm -r $step/src/assets && cp -r $clone/src/assets $step/src/assets
-  rm -r $step/src/styles.css && cp -r $clone/src/styles.css $step/src/styles.css
-  rm -r $step/src/index.html && cp -r $clone/src/index.html $step/src/index.html
+  cd $clone
+  branch=$(git branch | grep \* | cut -d ' ' -f2)
+  cd $root
 
-  ng serve $1 -o
+  rm -r $path/src/app && cp -r $clone/src/app $path/src/app
+
+  rm -r $path/src/environments && cp -r $clone/src/environments $path/src/
+  rm -r $path/src/assets && cp -r $clone/src/assets $path/src/assets
+  rm -r $path/src/styles.css && cp -r $clone/src/styles.css $path/src/styles.css
+  rm -r $path/src/index.html && cp -r $clone/src/index.html $path/src/index.html
+
+  git add .
+  git status
+  git commit -m "feat($name): create project from branch $branch"
+}
+
+if [ -d $clone/src/app ]; then
+  echo "generate"
+
+  copy_step "$app"
+  cd $clone
+  git checkout $(git branch | grep \* | cut -d ' ' -f2)-solution
+  cd $root
+  copy_step "$app-solution"
+
+  ng serve $app-solution -o
 fi
