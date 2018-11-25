@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
     name:string;
     
     constructor() {
-        this.name = 'Angular 2';
+        this.name = 'Angular';
     }
 
     /**
