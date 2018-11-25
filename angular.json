@@ -1994,6 +1994,105 @@
           }
         }
       }
+    },
+    "output": {
+      "root": "steps/output/",
+      "sourceRoot": "steps/output/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/output",
+            "index": "steps/output/src/index.html",
+            "main": "steps/output/src/main.ts",
+            "polyfills": "steps/output/src/polyfills.ts",
+            "tsConfig": "steps/output/tsconfig.app.json",
+            "assets": [
+              "steps/output/src/favicon.ico",
+              "steps/output/src/assets"
+            ],
+            "styles": [
+              "steps/output/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/output/src/environments/environment.ts",
+                  "with": "steps/output/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "output:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "output:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "output:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/output/src/test.ts",
+            "polyfills": "steps/output/src/polyfills.ts",
+            "tsConfig": "steps/output/tsconfig.spec.json",
+            "karmaConfig": "steps/output/karma.conf.js",
+            "styles": [
+              "steps/output/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/output/src/favicon.ico",
+              "steps/output/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/output/tsconfig.app.json",
+              "steps/output/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
