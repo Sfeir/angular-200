@@ -1,9 +1,11 @@
 
+import {mergeMap} from 'rxjs/operators';
+
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
-import 'rxjs/add/operator/mergeMap';
+
 
 const BASE_URL = 'http://localhost:9000';
 
@@ -35,8 +37,8 @@ export class PeopleComponent implements OnInit {
     }
 
     add(person: any) {
-        this._http.post(`${BASE_URL}/api/peoples/`, person)
-            .mergeMap( res => this._http.get(`${BASE_URL}/api/peoples/`))
+        this._http.post(`${BASE_URL}/api/peoples/`, person).pipe(
+            mergeMap( res => this._http.get(`${BASE_URL}/api/peoples/`)))
             .subscribe( (people: any[]) => {
                 this.people = people;
                 this.hideDialog();

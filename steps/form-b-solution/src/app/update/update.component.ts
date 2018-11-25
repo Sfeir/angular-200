@@ -1,8 +1,10 @@
+
+import {mergeMap, map} from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+
+
 import { Observable } from 'rxjs';
 
 const BASE_URL = 'http://localhost:9000';
@@ -28,9 +30,9 @@ export class UpdateComponent implements OnInit {
      * OnInit implementation
      */
     ngOnInit() {
-        this._route.params
-            .map((params: any) => params.id)
-            .mergeMap((id: string) => this._http.get(`${BASE_URL}/api/peoples/${id}`))
+        this._route.params.pipe(
+            map((params: any) => params.id),
+            mergeMap((id: string) => this._http.get(`${BASE_URL}/api/peoples/${id}`)),)
             .subscribe( (person: any) => this.person = person);
     }
 
