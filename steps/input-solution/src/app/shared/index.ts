@@ -1,1 +1,1 @@
-export * from './card/index'
+export * from './card/index';

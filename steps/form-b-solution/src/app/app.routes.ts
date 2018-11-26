@@ -6,10 +6,10 @@ import { PeopleComponent } from './people/index';
 import { UpdateComponent } from './update/index';
 
 const ROUTES: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'people', component: PeopleComponent},
-  {path: 'edit/:id', component: UpdateComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'people', component: PeopleComponent },
+  { path: 'edit/:id', component: UpdateComponent }
 ];
 
-export const APP_ROUTES = RouterModule.forRoot(ROUTES,{useHash: true});
+export const APP_ROUTES = RouterModule.forRoot(ROUTES, { useHash: true });
