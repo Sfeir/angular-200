@@ -3553,6 +3553,105 @@
           }
         }
       }
+    },
+    "pipe-b": {
+      "root": "steps/pipe-b/",
+      "sourceRoot": "steps/pipe-b/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/pipe-b",
+            "index": "steps/pipe-b/src/index.html",
+            "main": "steps/pipe-b/src/main.ts",
+            "polyfills": "steps/pipe-b/src/polyfills.ts",
+            "tsConfig": "steps/pipe-b/tsconfig.app.json",
+            "assets": [
+              "steps/pipe-b/src/favicon.ico",
+              "steps/pipe-b/src/assets"
+            ],
+            "styles": [
+              "steps/pipe-b/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/pipe-b/src/environments/environment.ts",
+                  "with": "steps/pipe-b/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pipe-b:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pipe-b:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pipe-b:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/pipe-b/src/test.ts",
+            "polyfills": "steps/pipe-b/src/polyfills.ts",
+            "tsConfig": "steps/pipe-b/tsconfig.spec.json",
+            "karmaConfig": "steps/pipe-b/karma.conf.js",
+            "styles": [
+              "steps/pipe-b/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/pipe-b/src/favicon.ico",
+              "steps/pipe-b/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/pipe-b/tsconfig.app.json",
+              "steps/pipe-b/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
