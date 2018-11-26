@@ -1,11 +1,11 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body {
   background: red;
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   -webkit-font-smoothing: antialiased;
 }
 * /deep/ * {
@@ -14,13 +14,15 @@ body {
   line-height: 1.42857143;
   color: inherit;
 }
-h1, * /deep/ h1 {
+h1,
+* /deep/ h1 {
   font-size: 36px;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
-button[mat-fab], a[mat-fab] {
+button[mat-fab],
+a[mat-fab] {
   position: fixed;
   bottom: 20px;
   right: 20px;

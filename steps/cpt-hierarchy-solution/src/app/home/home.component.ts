@@ -1,20 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'sfeir-home',
-    templateUrl: 'home.component.html',
-    styleUrls: ['home.component.css']
+  selector: 'sfeir-home',
+  templateUrl: 'home.component.html',
+  styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-    name: string;
+  name: string;
 
-    constructor() {
-        this.name = 'Angular';
-    }
+  constructor() {
+    this.name = 'Angular';
+  }
 
-    /**
-     * OnInit implementation
-     */
-    ngOnInit() {
-    }
+  /**
+   * OnInit implementation
+   */
+  ngOnInit() {}
 }

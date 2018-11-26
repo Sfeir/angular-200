@@ -203,8 +203,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/hands-on/tsconfig.app.json",
-              "steps/hands-on/tsconfig.spec.json"
+              "steps/hands-on/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -302,8 +301,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/hands-on-solution/tsconfig.app.json",
-              "steps/hands-on-solution/tsconfig.spec.json"
+              "steps/hands-on-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -401,8 +399,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/ngg/tsconfig.app.json",
-              "steps/ngg/tsconfig.spec.json"
+              "steps/ngg/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -500,8 +497,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/ngg-solution/tsconfig.app.json",
-              "steps/ngg-solution/tsconfig.spec.json"
+              "steps/ngg-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -599,8 +595,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/cpt-hierarchy/tsconfig.app.json",
-              "steps/cpt-hierarchy/tsconfig.spec.json"
+              "steps/cpt-hierarchy/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -698,8 +693,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/cpt-hierarchy-solution/tsconfig.app.json",
-              "steps/cpt-hierarchy-solution/tsconfig.spec.json"
+              "steps/cpt-hierarchy-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -797,8 +791,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/binding/tsconfig.app.json",
-              "steps/binding/tsconfig.spec.json"
+              "steps/binding/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -896,8 +889,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/binding-solution/tsconfig.app.json",
-              "steps/binding-solution/tsconfig.spec.json"
+              "steps/binding-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -995,8 +987,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/events/tsconfig.app.json",
-              "steps/events/tsconfig.spec.json"
+              "steps/events/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1094,8 +1085,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/events-solution/tsconfig.app.json",
-              "steps/events-solution/tsconfig.spec.json"
+              "steps/events-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1193,8 +1183,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/http/tsconfig.app.json",
-              "steps/http/tsconfig.spec.json"
+              "steps/http/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1292,8 +1281,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/http-solution/tsconfig.app.json",
-              "steps/http-solution/tsconfig.spec.json"
+              "steps/http-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1391,8 +1379,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/router/tsconfig.app.json",
-              "steps/router/tsconfig.spec.json"
+              "steps/router/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1490,8 +1477,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/router-solution/tsconfig.app.json",
-              "steps/router-solution/tsconfig.spec.json"
+              "steps/router-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1589,8 +1575,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/ngfor/tsconfig.app.json",
-              "steps/ngfor/tsconfig.spec.json"
+              "steps/ngfor/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1688,8 +1673,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/ngfor-solution/tsconfig.app.json",
-              "steps/ngfor-solution/tsconfig.spec.json"
+              "steps/ngfor-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1787,8 +1771,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/input/tsconfig.app.json",
-              "steps/input/tsconfig.spec.json"
+              "steps/input/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1886,8 +1869,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/input-solution/tsconfig.app.json",
-              "steps/input-solution/tsconfig.spec.json"
+              "steps/input-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -1985,8 +1967,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/input-b/tsconfig.app.json",
-              "steps/input-b/tsconfig.spec.json"
+              "steps/input-b/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2084,8 +2065,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/output/tsconfig.app.json",
-              "steps/output/tsconfig.spec.json"
+              "steps/output/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2183,8 +2163,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/output-solution/tsconfig.app.json",
-              "steps/output-solution/tsconfig.spec.json"
+              "steps/output-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2282,8 +2261,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/form/tsconfig.app.json",
-              "steps/form/tsconfig.spec.json"
+              "steps/form/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2381,8 +2359,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/form-solution/tsconfig.app.json",
-              "steps/form-solution/tsconfig.spec.json"
+              "steps/form-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2480,8 +2457,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/form-b/tsconfig.app.json",
-              "steps/form-b/tsconfig.spec.json"
+              "steps/form-b/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -2579,8 +2555,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "steps/form-b-solution/tsconfig.app.json",
-              "steps/form-b-solution/tsconfig.spec.json"
+              "steps/form-b-solution/tsconfig.app.json"
             ],
             "exclude": [
               "**/node_modules/**"
