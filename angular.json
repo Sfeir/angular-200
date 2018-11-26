@@ -3850,6 +3850,105 @@
           }
         }
       }
+    },
+    "directive-use-solution": {
+      "root": "steps/directive-use-solution/",
+      "sourceRoot": "steps/directive-use-solution/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/directive-use-solution",
+            "index": "steps/directive-use-solution/src/index.html",
+            "main": "steps/directive-use-solution/src/main.ts",
+            "polyfills": "steps/directive-use-solution/src/polyfills.ts",
+            "tsConfig": "steps/directive-use-solution/tsconfig.app.json",
+            "assets": [
+              "steps/directive-use-solution/src/favicon.ico",
+              "steps/directive-use-solution/src/assets"
+            ],
+            "styles": [
+              "steps/directive-use-solution/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/directive-use-solution/src/environments/environment.ts",
+                  "with": "steps/directive-use-solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "directive-use-solution:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "directive-use-solution:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "directive-use-solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/directive-use-solution/src/test.ts",
+            "polyfills": "steps/directive-use-solution/src/polyfills.ts",
+            "tsConfig": "steps/directive-use-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/directive-use-solution/karma.conf.js",
+            "styles": [
+              "steps/directive-use-solution/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/directive-use-solution/src/favicon.ico",
+              "steps/directive-use-solution/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/directive-use-solution/tsconfig.app.json",
+              "steps/directive-use-solution/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
