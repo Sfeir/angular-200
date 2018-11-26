@@ -3058,6 +3058,105 @@
           }
         }
       }
+    },
+    "form-custom-validator-solution": {
+      "root": "steps/form-custom-validator-solution/",
+      "sourceRoot": "steps/form-custom-validator-solution/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/form-custom-validator-solution",
+            "index": "steps/form-custom-validator-solution/src/index.html",
+            "main": "steps/form-custom-validator-solution/src/main.ts",
+            "polyfills": "steps/form-custom-validator-solution/src/polyfills.ts",
+            "tsConfig": "steps/form-custom-validator-solution/tsconfig.app.json",
+            "assets": [
+              "steps/form-custom-validator-solution/src/favicon.ico",
+              "steps/form-custom-validator-solution/src/assets"
+            ],
+            "styles": [
+              "steps/form-custom-validator-solution/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/form-custom-validator-solution/src/environments/environment.ts",
+                  "with": "steps/form-custom-validator-solution/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "form-custom-validator-solution:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "form-custom-validator-solution:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "form-custom-validator-solution:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/form-custom-validator-solution/src/test.ts",
+            "polyfills": "steps/form-custom-validator-solution/src/polyfills.ts",
+            "tsConfig": "steps/form-custom-validator-solution/tsconfig.spec.json",
+            "karmaConfig": "steps/form-custom-validator-solution/karma.conf.js",
+            "styles": [
+              "steps/form-custom-validator-solution/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/form-custom-validator-solution/src/favicon.ico",
+              "steps/form-custom-validator-solution/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/form-custom-validator-solution/tsconfig.app.json",
+              "steps/form-custom-validator-solution/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
