@@ -42,7 +42,6 @@
     "express": "4.16.4",
     "hammerjs": "2.0.8",
     "rxjs": "6.3.3",
-    "rxjs-compat": "6.3.3",
     "underscore": "1.9.1",
     "zone.js": "~0.8.26"
   },
