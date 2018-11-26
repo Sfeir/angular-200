@@ -1,7 +1,7 @@
+import { mergeMap, map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+
 import { Observable } from 'rxjs';
 import { PeopleService } from '../shared/people-service';
 
@@ -27,8 +27,10 @@ export class UpdateComponent implements OnInit {
    */
   ngOnInit() {
     this._route.params
-      .map((params: any) => params.id)
-      .mergeMap((id: string) => this._peopleService.fetchOne(id))
+      .pipe(
+        map((params: any) => params.id),
+        mergeMap((id: string) => this._peopleService.fetchOne(id))
+      )
       .subscribe((person: any) => (this.person = person));
   }
 
