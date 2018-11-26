@@ -14,7 +14,7 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
@@ -36,18 +36,10 @@ import { PeopleComponent } from './people';
     MatIconModule,
     MatListModule,
     HttpClientModule,
-    APP_ROUTES,
+    APP_ROUTES
   ],
-  declarations: [
-    PeopleAppComponent,
-    HomeComponent,
-    PeopleComponent
-  ],
-  providers: [
-    HttpClient,
-  ],
-  bootstrap: [
-    PeopleAppComponent
-  ]
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent],
+  providers: [HttpClient],
+  bootstrap: [PeopleAppComponent]
 })
-export class AppModule { }
+export class AppModule {}

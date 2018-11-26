@@ -13,9 +13,9 @@ import {
   MatRadioModule,
   MatIconModule,
   MatListModule,
-  MatDialogModule,
+  MatDialogModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
@@ -42,19 +42,9 @@ import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
     HttpClientModule,
     APP_ROUTES
   ],
-  declarations: [
-    PeopleAppComponent,
-    HomeComponent,
-    PeopleComponent,
-    CardComponent,
-    AddDialogComponent,
-  ],
+  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent],
   entryComponents: [AddDialogComponent],
-  providers: [
-    HttpClient,
-  ],
-  bootstrap: [
-    PeopleAppComponent
-  ]
+  providers: [HttpClient],
+  bootstrap: [PeopleAppComponent]
 })
-export class AppModule { }
+export class AppModule {}

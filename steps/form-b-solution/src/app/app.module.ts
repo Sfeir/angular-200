@@ -16,7 +16,7 @@ import {
   MatListModule,
   MatDialogModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
@@ -44,7 +44,7 @@ import { UpdateComponent } from './update/update.component';
     MatDialogModule,
     FormsModule,
     HttpClientModule,
-    APP_ROUTES,
+    APP_ROUTES
   ],
   declarations: [
     PeopleAppComponent,
@@ -56,11 +56,7 @@ import { UpdateComponent } from './update/update.component';
     UpdateComponent
   ],
   entryComponents: [AddDialogComponent],
-  providers: [
-    HttpClient,
-  ],
-  bootstrap: [
-    PeopleAppComponent
-  ]
+  providers: [HttpClient],
+  bootstrap: [PeopleAppComponent]
 })
-export class AppModule { }
+export class AppModule {}

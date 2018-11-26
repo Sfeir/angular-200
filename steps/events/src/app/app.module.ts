@@ -13,7 +13,7 @@ import {
   MatIconModule,
   MatListModule
 } from '@angular/material';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
@@ -32,13 +32,8 @@ import { HomeComponent } from './home';
     MatIconModule,
     MatListModule
   ],
-  declarations: [
-    PeopleAppComponent,
-    HomeComponent
-  ],
-  providers: [ ],
-  bootstrap: [
-    PeopleAppComponent
-  ]
+  declarations: [PeopleAppComponent, HomeComponent],
+  providers: [],
+  bootstrap: [PeopleAppComponent]
 })
-export class AppModule { }
+export class AppModule {}
