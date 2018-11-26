@@ -13,7 +13,7 @@
     "e2e": "ng e2e",
     "pree2e": "webdriver-manager update",
     "precommit": "lint-staged",
-    "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts}"
+    "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts,html}"
   },
   "authors": [
     "Wassim Chegham <chegham.w@sfeir.com>",
