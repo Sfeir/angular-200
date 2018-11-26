@@ -118,7 +118,7 @@
       "root": "steps/hands-on/",
       "sourceRoot": "steps/hands-on/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -216,7 +216,7 @@
       "root": "steps/hands-on-solution/",
       "sourceRoot": "steps/hands-on-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -314,7 +314,7 @@
       "root": "steps/ngg/",
       "sourceRoot": "steps/ngg/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -412,7 +412,7 @@
       "root": "steps/ngg-solution/",
       "sourceRoot": "steps/ngg-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -510,7 +510,7 @@
       "root": "steps/cpt-hierarchy/",
       "sourceRoot": "steps/cpt-hierarchy/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -608,7 +608,7 @@
       "root": "steps/cpt-hierarchy-solution/",
       "sourceRoot": "steps/cpt-hierarchy-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -706,7 +706,7 @@
       "root": "steps/binding/",
       "sourceRoot": "steps/binding/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -804,7 +804,7 @@
       "root": "steps/binding-solution/",
       "sourceRoot": "steps/binding-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -902,7 +902,7 @@
       "root": "steps/events/",
       "sourceRoot": "steps/events/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1000,7 +1000,7 @@
       "root": "steps/events-solution/",
       "sourceRoot": "steps/events-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1098,7 +1098,7 @@
       "root": "steps/http/",
       "sourceRoot": "steps/http/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1196,7 +1196,7 @@
       "root": "steps/http-solution/",
       "sourceRoot": "steps/http-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1294,7 +1294,7 @@
       "root": "steps/router/",
       "sourceRoot": "steps/router/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1392,7 +1392,7 @@
       "root": "steps/router-solution/",
       "sourceRoot": "steps/router-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1490,7 +1490,7 @@
       "root": "steps/ngfor/",
       "sourceRoot": "steps/ngfor/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1588,7 +1588,7 @@
       "root": "steps/ngfor-solution/",
       "sourceRoot": "steps/ngfor-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1686,7 +1686,7 @@
       "root": "steps/input/",
       "sourceRoot": "steps/input/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1784,7 +1784,7 @@
       "root": "steps/input-solution/",
       "sourceRoot": "steps/input-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1882,7 +1882,7 @@
       "root": "steps/input-b/",
       "sourceRoot": "steps/input-b/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -1980,7 +1980,7 @@
       "root": "steps/output/",
       "sourceRoot": "steps/output/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -2078,7 +2078,7 @@
       "root": "steps/output-solution/",
       "sourceRoot": "steps/output-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -2176,7 +2176,7 @@
       "root": "steps/form/",
       "sourceRoot": "steps/form/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -2274,7 +2274,7 @@
       "root": "steps/form-solution/",
       "sourceRoot": "steps/form-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -2372,7 +2372,7 @@
       "root": "steps/form-b/",
       "sourceRoot": "steps/form-b/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {
@@ -2470,7 +2470,7 @@
       "root": "steps/form-b-solution/",
       "sourceRoot": "steps/form-b-solution/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "sfeir",
       "schematics": {},
       "architect": {
         "build": {

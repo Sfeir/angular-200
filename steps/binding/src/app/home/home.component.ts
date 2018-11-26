@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { People } from '../people.model';
 
 @Component({
   selector: 'sfeir-home',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   name: string;
+  people: People;
 
   constructor() {
     this.name = 'Angular';
