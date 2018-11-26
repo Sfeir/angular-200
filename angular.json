@@ -2563,6 +2563,105 @@
           }
         }
       }
+    },
+    "form-validation": {
+      "root": "steps/form-validation/",
+      "sourceRoot": "steps/form-validation/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/form-validation",
+            "index": "steps/form-validation/src/index.html",
+            "main": "steps/form-validation/src/main.ts",
+            "polyfills": "steps/form-validation/src/polyfills.ts",
+            "tsConfig": "steps/form-validation/tsconfig.app.json",
+            "assets": [
+              "steps/form-validation/src/favicon.ico",
+              "steps/form-validation/src/assets"
+            ],
+            "styles": [
+              "steps/form-validation/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "steps/form-validation/src/environments/environment.ts",
+                  "with": "steps/form-validation/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "form-validation:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "form-validation:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "form-validation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "steps/form-validation/src/test.ts",
+            "polyfills": "steps/form-validation/src/polyfills.ts",
+            "tsConfig": "steps/form-validation/tsconfig.spec.json",
+            "karmaConfig": "steps/form-validation/karma.conf.js",
+            "styles": [
+              "steps/form-validation/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "steps/form-validation/src/favicon.ico",
+              "steps/form-validation/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "steps/form-validation/tsconfig.app.json",
+              "steps/form-validation/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-200",
