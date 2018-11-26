@@ -15,7 +15,7 @@ import {
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// import { PeopleAppComponent } from './app.component';
+// import your component
 
 @NgModule({
   imports: [
@@ -32,11 +32,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatListModule
   ],
   declarations: [
-    // PeopleAppComponent
+    // register your component
   ],
   providers: [],
   bootstrap: [
-    // PeopleAppComponent
+    // boostrap w/ the component
   ]
 })
 export class AppModule {}
