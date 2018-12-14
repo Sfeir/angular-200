@@ -26,15 +26,11 @@ import { APP_ROUTES } from './app.routes';
 import { PeopleAppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
-import { CardComponent } from './shared/card';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
-import { FormComponent } from './shared/form';
 import { UpdateComponent } from './update/update.component';
-import { PeopleService } from './shared/people-service';
-import { NaPipe } from './shared/na-pipe';
-import { SfeirBadgeDirective } from './shared/badge';
 import { AppState } from './app.state';
 import { environment } from '../environments/environment';
+import { CardComponent, FormComponent, NaPipe, PeopleService, SfeirBadgeDirective, SearchComponent } from './shared';
 
 @NgModule({
   imports: [
@@ -68,7 +64,8 @@ import { environment } from '../environments/environment';
     FormComponent,
     UpdateComponent,
     NaPipe,
-    SfeirBadgeDirective
+    SfeirBadgeDirective,
+    SearchComponent
   ],
   entryComponents: [AddDialogComponent],
   providers: [PeopleService],
