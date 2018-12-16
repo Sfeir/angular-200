@@ -1,32 +1,39 @@
-# Angular-200
+# Angular 200
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
+Ce projet est un projet généré avec [angular-cli](https://cli.angular.io/) version 7.0.6.
 
-## Development server
+## Architecture du projet
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ce projet est un projet composé de deux grosses parties.
 
-## Code scaffolding
+- back-end: server node js écrit à l'aide du framework Express
+- front-end: app Angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+Le front-end se trouve dans le dossier steps.  
+Chaque dossier dans le dossier steps est une application Angular minimal et correspond à un concept clé de la formation (ex: binding)
+Pour chaque concept se trouve la solution associée (ex: binding-solution)
 
-## Build
+## Utilisation du CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+L'utilisation du CLI, permet de générer des composants, services, ..., rapidement.
+Les commandes suivantes seront utilisées tout au long de la formation.
 
-## Running unit tests
+- ng generate component `component name`, génère un component Angular
+- ng generate service `service name`, génère un service Angular
+- ng generate directive `directive name`, génère une directive Angular
+- ng generate pipe `pipe name`, génère un pipe Angular
+- ng generate class `class name`, génère une class Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Il est possbile d'ajouter des options à ces commandes, comme par exemple --dry-run permettant de vérifier ce qui va être généré.
 
-## Running end-to-end tests
+## Les scripts NPM
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+A travers ce projet, les scripts npm vous permettront de lancer en mode développement les différentes steps, le back-end et les tests unitaires. Voici les 3 scripts nécessaires au bon déroulement de la formation:
 
-## Deploying to Github Pages
+- npm run client -- "`nom du dossier step à lancer`" (ex: npm run client -- "binding")
+- npm run start
+- npm run test -- "unit-tests"
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+## Bootstrap initial
 
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Il est important avant d'entamer tout dévéloppement, de se placer à la racide du projet et de lancer la commande `npm install` permettant d'installer toutes les dépendances du projet.
