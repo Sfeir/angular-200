@@ -2,84 +2,30 @@
 
 A [SFEIR School](https://www.sfeir.com/formation/school/)
 
-
 ![logo](https://www.sfeir.com/img/school/formations/Angular%20200.png)
 
 [Calendrier des formations, liste des formateurs et programme de formation](https://www.sfeir.com/formation/school/angular-200/)
 
+## Installation
 
-## Table des matières
+- `git clone https://github.com/Sfeir/angular-200.git`
+- `cd angular-200`
+- `npm install`
 
-  * [Installation et lancement](#Installation-et-lancement)
-  * [Déroulement de la formation](#Déroulement-de-la-formation)
-  * [Liste des projets](#Liste-des-projets)
-  * [Stack technique](#stack-technique)
+## Commandes
 
+La formation se déroule step by step, chaque TP ayant deux projets associés dans le dossier [`steps/`](steps), un pour la réalisation de l'excice et un autre avec la solution pour cet exercice, toujours intitulé avec le nom du projet step suivi de `-solution`.
 
-## Installation et lancement
+Chacun de ces projets étant un projet Angular CLI, vous pouvez utiliser les commande Angular CLI habituelles.
+Exemple : `ng test <projet>`
 
-  * `git clone https://github.com/Sfeir/angular-200.git`
-  * `cd angular-200`
-  * `npm install`
+Nous avons cependant mis en place différents scripts pour vous faciliter cela. Cf. (package.json)[package.json].
+La majorité de ces scripts sont simplement des alias pour une commande Angular CLI. Vous pouvez donc utiliser les options de Angular CLI, mais [après l'option `--` de npm](https://docs.npmjs.com/cli/run-script.html) afin de lui indiquer qu'il s'agit d'options à passer au script et non d'options npm.
 
+- lancer une commande Angular CLI directement via l'installation locale (recommandé): `npm run ng <commande ng>`
+- lancer le server nodejs : `npm run server` (indispensable pour tous les exercices avec des appels HTTP)
+- lancer la Web App : `npm run client <projet>`
+  - en mode prod : ̀npm run client -- <projet> --prod`
+- lancer les tests unitaires : `npm run test <projet>`
 
-  * `npm run server`
-
-
-## Déroulement de la formation
-
-  Un TP :
-
-  * un projet par exercice :
-    `npm run client step01`
-   * un projet par solution :
-    `npm run client step01solution`
-
-
-
-## Liste des projets
-
-  * step01: Création d'un composant manuellement
-  * step02: Création d'un composant avec le CLI
-  * step03: Imbriquer les composants
-  * step04: Afficher une personne
-  * step05: Gérer un clic
-  * step06: Récupérer les personnes depuis le serveur
-  * step07: Configurer la navigation
-  * step08: Utiliser la directive *ngFor
-  * step09: Réutilisation des composants (partie 1)
-  * step10: Réutilisation des composants (partie 2)
-  * step11: Supprimer une personne
-  * step12: Ajouter une personne
-  * step13: Modifier une personne
-  * step14: Valider le formulaire (Template driven form)
-  * step15: Valider le formulaire (Model driven form)
-  * step16: Créer un validateur de formulaire
-  * step17: Créer un service
-  * step18: Utiliser une Pipe
-  * step19: Créer une Pipe
-  * step20: Utilisation des directives
-  * step21: Créer une directive
-  * step22: TDD
-  * step23: NGXS
-  * step24: NGRX
-
-
-## Stack technique
-
-* Angular
-* NGXS
-* NGRX
-* Angular Material
-* NodeJS
-* ExpressJS
-
-
-## Commandes utiles
-
-Ces commandes doivent être toutes suffixées par le nom du projet : `step01`
-
-  * `npm run ng build` - Compiles an Angular app into an output directory(dist)
-  * `npm run ng test` - Runs unit tests
-  * `npm run ng lint` - Runs linting tools
-  * `npm run ng e2e` - Builds and serves an Angular app, then runs end-to-end tests using Protractor
+Voir la [documentation d'Angular CLI](https://angular.io/cli) pour toute autre commande.
