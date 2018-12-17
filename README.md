@@ -1,32 +1,31 @@
-# Angular-200
+# Angular 200
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.20-4.
+A [SFEIR School](https://www.sfeir.com/formation/school/)
 
-## Development server
+![logo](https://www.sfeir.com/img/school/formations/Angular%20200.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[Calendrier des formations, liste des formateurs et programme de formation](https://www.sfeir.com/formation/school/angular-200/)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+- `git clone https://github.com/Sfeir/angular-200.git`
+- `cd angular-200`
+- `npm install`
 
-## Build
+## Commandes
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+La formation se déroule step by step, chaque TP ayant deux projets associés dans le dossier [`steps/`](steps), un pour la réalisation de l'excice et un autre avec la solution pour cet exercice, toujours intitulé avec le nom du projet step suivi de `-solution`.
 
-## Running unit tests
+Chacun de ces projets étant un projet Angular CLI, vous pouvez utiliser les commande Angular CLI habituelles.
+Exemple : `ng test <projet>`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Nous avons cependant mis en place différents scripts pour vous faciliter cela. Cf. (package.json)[package.json].
+La majorité de ces scripts sont simplement des alias pour une commande Angular CLI. Vous pouvez donc utiliser les options de Angular CLI, mais [après l'option `--` de npm](https://docs.npmjs.com/cli/run-script.html) afin de lui indiquer qu'il s'agit d'options à passer au script et non d'options npm.
 
-## Running end-to-end tests
+- lancer une commande Angular CLI directement via l'installation locale (recommandé): `npm run ng <commande ng>`
+- lancer le server nodejs : `npm run server` (indispensable pour tous les exercices avec des appels HTTP)
+- lancer la Web App : `npm run client <projet>`
+  - en mode prod : ̀npm run client -- <projet> --prod`
+- lancer les tests unitaires : `npm run test <projet>`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Voir la [documentation d'Angular CLI](https://angular.io/cli) pour toute autre commande.
