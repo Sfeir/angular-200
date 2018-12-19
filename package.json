@@ -3,21 +3,19 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "node _server/server.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "client": "ng serve",
-    "server": "npm start",
+    "server": "node _server/server.js",
     "ng": "ng",
-    "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
     "pree2e": "webdriver-manager update",
     "precommit": "lint-staged",
     "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts,html}"
   },
   "authors": [
     "Wassim Chegham <chegham.w@sfeir.com>",
-    "Cyril Balit <balit.c@sfeir.com>"
+    "Cyril Balit <balit.c@sfeir.com>",
+    "Noël Macé <mace.n@sfeir.com"
   ],
   "private": true,
   "dependencies": {
@@ -56,6 +54,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~10.12.0",
     "codelyzer": "~4.5.0",
+    "concurrently": "^4.1.0",
     "husky": "^0.14.3",
     "jasmine-core": "3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
