@@ -35,15 +35,17 @@ describe('SfeirBadgeDirective', () => {
 
   it('should create an instance of sfeir-badge', () => {
     let fixture = createTestComponent('<div sfeir-badge></div>');
-    expect(fixture).toBeDefined();
+    expect(true).toBe(false);
   });
 
   it('should not add badge icon when isManager === false', () => {
     // todo
+    expect(true).toBe(false);
   });
 
   it('should add badge icon when isManager === true', () => {
     // todo
+    expect(true).toBe(false);
   });
 });
 

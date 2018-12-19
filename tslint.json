@@ -68,14 +68,12 @@
     "variable-name": false,
     "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"],
     "no-output-on-prefix": true,
-    "directive-selector": [true, "attribute", "sfeir", "camelCase", "kebab-case"],
+    "directive-selector": [true, "attribute", "sfeir", "camelCase"],
     "component-selector": [true, "element", "sfeir", "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,
-    "no-input-rename": {
-      "severity": "warn"
-    },
+    "no-input-rename": true,
     "no-output-rename": {
       "severity": "warn"
     },

@@ -28,18 +28,21 @@ describe('AddDialogComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(true).toBe(false);
   });
 
   it('should close dialog', () => {
     // TODO   ...expect closeDialog method to be called
+    expect(true).toBe(false);
   });
 
   it('should close dialog and pass person value', () => {
     // TODO
+    expect(true).toBe(false);
   });
 
   it('closeDialog should call closing service of dialog', inject([MatDialogRef], dialogRef => {
     // TODO
+    expect(true).toBe(false);
   }));
 });

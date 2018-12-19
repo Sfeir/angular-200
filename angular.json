@@ -4346,133 +4346,6 @@
         }
       }
     },
-    "toto": {
-      "root": "steps/toto/",
-      "sourceRoot": "steps/toto/src",
-      "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/toto",
-            "index": "steps/toto/src/index.html",
-            "main": "steps/toto/src/main.ts",
-            "polyfills": "steps/toto/src/polyfills.ts",
-            "tsConfig": "steps/toto/tsconfig.app.json",
-            "assets": [
-              "steps/toto/src/favicon.ico",
-              "steps/toto/src/assets"
-            ],
-            "styles": [
-              "steps/toto/src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "steps/toto/src/environments/environment.ts",
-                  "with": "steps/toto/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "toto:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "toto:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "toto:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "steps/toto/src/test.ts",
-            "polyfills": "steps/toto/src/polyfills.ts",
-            "tsConfig": "steps/toto/tsconfig.spec.json",
-            "karmaConfig": "steps/toto/karma.conf.js",
-            "styles": [
-              "steps/toto/src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "steps/toto/src/favicon.ico",
-              "steps/toto/src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "steps/toto/tsconfig.app.json",
-              "steps/toto/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "toto-e2e": {
-      "root": "steps/toto-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/toto-e2e/protractor.conf.js",
-            "devServerTarget": "toto:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "toto:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/toto-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "unit-tests": {
       "root": "steps/unit-tests/",
       "sourceRoot": "steps/unit-tests/src",
@@ -4565,34 +4438,6 @@
               "steps/unit-tests/tsconfig.app.json",
               "steps/unit-tests/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "unit-tests-e2e": {
-      "root": "steps/unit-tests-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/unit-tests-e2e/protractor.conf.js",
-            "devServerTarget": "unit-tests:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "unit-tests:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/unit-tests-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -4699,34 +4544,6 @@
         }
       }
     },
-    "unit-tests-solution-e2e": {
-      "root": "steps/unit-tests-solution-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/unit-tests-solution-e2e/protractor.conf.js",
-            "devServerTarget": "unit-tests-solution:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "unit-tests-solution:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/unit-tests-solution-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngxs": {
       "root": "steps/ngxs/",
       "sourceRoot": "steps/ngxs/src",
@@ -4819,34 +4636,6 @@
               "steps/ngxs/tsconfig.app.json",
               "steps/ngxs/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngxs-e2e": {
-      "root": "steps/ngxs-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/ngxs-e2e/protractor.conf.js",
-            "devServerTarget": "ngxs:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngxs:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/ngxs-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]
@@ -4953,34 +4742,6 @@
         }
       }
     },
-    "ngxs-solution-e2e": {
-      "root": "steps/ngxs-solution-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/ngxs-solution-e2e/protractor.conf.js",
-            "devServerTarget": "ngxs-solution:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngxs-solution:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/ngxs-solution-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngrx": {
       "root": "steps/ngrx/",
       "sourceRoot": "steps/ngrx/src",
@@ -5080,34 +4841,6 @@
         }
       }
     },
-    "ngrx-e2e": {
-      "root": "steps/ngrx-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/ngrx-e2e/protractor.conf.js",
-            "devServerTarget": "ngrx:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngrx:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/ngrx-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ngrx-solution": {
       "root": "steps/ngrx-solution/",
       "sourceRoot": "steps/ngrx-solution/src",
@@ -5200,34 +4933,6 @@
               "steps/ngrx-solution/tsconfig.app.json",
               "steps/ngrx-solution/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ngrx-solution-e2e": {
-      "root": "steps/ngrx-solution-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "steps/ngrx-solution-e2e/protractor.conf.js",
-            "devServerTarget": "ngrx-solution:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngrx-solution:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "steps/ngrx-solution-e2e/tsconfig.e2e.json",
             "exclude": [
               "**/node_modules/**"
             ]

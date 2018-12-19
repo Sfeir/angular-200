@@ -6,7 +6,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angu
   styleUrls: ['search.component.css']
 })
 export class SearchComponent {
-  @Input('value') initValue = '';
+  @Input() initValue: string;
   @Output('search') searchEvent$: EventEmitter<string>;
   @Output('selectOnEnter') selectEvent$: EventEmitter<string>;
   @Output('current') currentEvent$: EventEmitter<number>;

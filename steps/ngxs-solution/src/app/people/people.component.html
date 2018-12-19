@@ -1,4 +1,4 @@
-<sfeir-search (search)="onSearch($event)" [value]="search$ | async"></sfeir-search> -
+<sfeir-search (search)="onSearch($event)" [initValue]="search$ | async"></sfeir-search> -
 <section [ngSwitch]="view">
   <section *ngSwitchCase="'card'">
     <sfeir-card *ngFor="let person of people" [person]="person" (personDelete)="delete($event)"></sfeir-card>

@@ -86,13 +86,16 @@ describe('UpdateComponent', () => {
 
   it('should fetch person with id=123', () => {
     // todo
+    expect(true).toBe(false);
   });
 
   it('should navigate to /people when updating info', () => {
     // todo
+    expect(true).toBe(false);
   });
 
   it('should navigate to /people when cancelling', () => {
     // todo
+    expect(true).toBe(false);
   });
 });

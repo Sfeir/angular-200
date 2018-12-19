@@ -48,6 +48,7 @@ describe('PeopleService', () => {
     it('should fetch all people when status === 200', () => {
       service.fetch().subscribe(response => {
         // TODO
+        expect(true).toBe(false);
       });
 
       // The following `expectOne()` will match the request's URL.
@@ -68,6 +69,7 @@ describe('PeopleService', () => {
 
       service.fetch().subscribe(response => {
         // TODO
+        expect(true).toBe(false);
       }, fail);
 
       const req = httpTestingController.expectOne(service.backendURL.allPeople);
@@ -81,6 +83,7 @@ describe('PeopleService', () => {
     it('should fetch random person when status === 200', () => {
       service.fetchRandom().subscribe(person => {
         // TODO
+        expect(true).toBe(false);
       });
 
       const req = httpTestingController.expectOne(service.backendURL.randomPeople);
@@ -95,6 +98,7 @@ describe('PeopleService', () => {
 
       service.fetchOne('456').subscribe(person => {
         // TODO
+        expect(true).toBe(false);
       });
 
       const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', id));
@@ -109,6 +113,7 @@ describe('PeopleService', () => {
 
       service.delete(id).subscribe(response => {
         // TODO
+        expect(true).toBe(false);
       });
 
       const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', id));
@@ -129,6 +134,7 @@ describe('PeopleService', () => {
 
       service.update(body).subscribe(person => {
         // TODO
+        expect(true).toBe(false);
       });
 
       const req = httpTestingController.expectOne(service.backendURL.onePeople.replace(':id', body.id));
@@ -148,6 +154,7 @@ describe('PeopleService', () => {
 
       service.create(body).subscribe(person => {
         // TODO
+        expect(true).toBe(false);
       });
 
       const req = httpTestingController.expectOne(service.backendURL.allPeople);
