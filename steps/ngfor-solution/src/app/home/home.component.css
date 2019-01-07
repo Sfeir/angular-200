@@ -47,6 +47,7 @@ mat-card-title span {
 }
 
 mat-card-subtitle.contact-info {
+  display: flex;
   margin-top: -7px;
   height: 20px;
 }
@@ -56,7 +57,7 @@ mat-card-title-group {
 }
 
 .contact-info mat-icon + a {
-  top: -8px;
+  top: 8px;
   position: relative;
   height: 18px;
 }
