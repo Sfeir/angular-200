@@ -9,7 +9,8 @@
     "ng": "ng",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts,html}"
+    "prettify": "prettier --write ./**/*.{json,css,scss,md,js,ts,html}",
+    "version": "standard-changelog && git add CHANGELOG.md"
   },
   "authors": [
     "Wassim Chegham <chegham.w@sfeir.com>",
@@ -67,6 +68,7 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "protractor": "5.4.2",
+    "standard-changelog": "^2.0.6",
     "ts-node": "7.0.1",
     "tslint": "~5.12.0",
     "typescript": "~3.2.2"
