@@ -1,4 +1,6 @@
-# 0.0.0 (2019-01-10)
+# 7.2.0 (2019-01-10)
+
+First release of the new "monorepository" version. Major version is synchronized with the Angular one.
 
 ### Bug Fixes
 
