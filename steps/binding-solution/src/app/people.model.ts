@@ -1,8 +1,4 @@
-interface foo {
-  bar: number;
-}
-
-export class People implements foo {
+export class People {
   id: string;
   photo: string;
   firstname: string;

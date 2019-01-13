@@ -47,18 +47,14 @@ mat-card-title span {
 }
 
 mat-card-subtitle.contact-info {
+  display: flex;
+  align-items: center;
   margin-top: -7px;
   height: 20px;
 }
 
 mat-card-title-group {
   margin-bottom: 20px;
-}
-
-.contact-info mat-icon + a {
-  top: -8px;
-  position: relative;
-  height: 18px;
 }
 
 .contact-info a:hover {
