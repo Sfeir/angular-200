@@ -19,7 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
@@ -45,9 +45,9 @@ import { FormsModule } from '@angular/forms';
     APP_ROUTES,
     FormsModule
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent, FormComponent],
+  declarations: [AppComponent, HomeComponent, PeopleComponent, CardComponent, AddDialogComponent, FormComponent],
   entryComponents: [AddDialogComponent],
   providers: [HttpClient],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -21,7 +21,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { AddDialogComponent } from './people/add-dialog/add-dialog.component';
@@ -49,7 +49,7 @@ import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, S
     StoreModule.forRoot(reducers, { metaReducers })
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -62,6 +62,6 @@ import { CardComponent, FormComponent, NaPipe, PeopleService, SearchComponent, S
   ],
   entryComponents: [AddDialogComponent],
   providers: [PeopleService],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

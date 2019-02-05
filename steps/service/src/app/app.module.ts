@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
@@ -47,7 +47,7 @@ import { UpdateComponent } from './update/update.component';
     ReactiveFormsModule
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -57,6 +57,6 @@ import { UpdateComponent } from './update/update.component';
   ],
   entryComponents: [AddDialogComponent],
   providers: [HttpClient],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

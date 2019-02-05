@@ -20,7 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
@@ -49,7 +49,7 @@ import { NaPipe } from './shared/na-pipe';
     ReactiveFormsModule
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -60,6 +60,6 @@ import { NaPipe } from './shared/na-pipe';
   ],
   entryComponents: [AddDialogComponent],
   providers: [HttpClient, PeopleService],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

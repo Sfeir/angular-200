@@ -23,7 +23,7 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 import { CardComponent } from './shared/card';
@@ -61,7 +61,7 @@ import { SearchComponent } from './shared/search/search.component';
     })
   ],
   declarations: [
-    PeopleAppComponent,
+    AppComponent,
     HomeComponent,
     PeopleComponent,
     CardComponent,
@@ -74,6 +74,6 @@ import { SearchComponent } from './shared/search/search.component';
   ],
   entryComponents: [AddDialogComponent],
   providers: [PeopleService],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

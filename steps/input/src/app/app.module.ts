@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { APP_ROUTES } from './app.routes';
 
-import { PeopleAppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 import { PeopleComponent } from './people';
 
@@ -38,8 +38,8 @@ import { PeopleComponent } from './people';
     HttpClientModule,
     APP_ROUTES
   ],
-  declarations: [PeopleAppComponent, HomeComponent, PeopleComponent],
+  declarations: [AppComponent, HomeComponent, PeopleComponent],
   providers: [HttpClient],
-  bootstrap: [PeopleAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
