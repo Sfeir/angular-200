@@ -1,3 +1,7 @@
+# ⚠️ CETTE SCHOOL EST MAINTENANT OPEN SOURCE !!!
+
+Ce Repository ne sera plus suivit, tout a été déplacé ici : [sfeir-school-angular](https://github.com/sfeir-open-source/sfeir-school-angular)
+
 # Angular 200
 
 A [SFEIR School](https://www.sfeir.com/formation/school/)
